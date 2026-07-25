@@ -1,0 +1,15 @@
+<div class="chart-content" *ngIf="!!data">
+
+  <apx-chart [series]="reportTypeChartOptions.series" [chart]="reportTypeChartOptions.chart"
+    [dataLabels]="reportTypeChartOptions.dataLabels" [markers]="reportTypeChartOptions.markers"
+    [title]="reportTypeChartOptions.title" [fill]="reportTypeChartOptions.fill" [yaxis]="reportTypeChartOptions.yaxis"
+    [xaxis]="reportTypeChartOptions.xaxis" [tooltip]="reportTypeChartOptions.tooltip"
+    [autoUpdateSeries]="true"></apx-chart>
+
+  <apx-chart [series]="reportTotalChartOptions.series" [chart]="reportTotalChartOptions.chart"
+    [dataLabels]="reportTotalChartOptions.dataLabels" [markers]="reportTotalChartOptions.markers"
+    [title]="reportTotalChartOptions.title" [fill]="reportTotalChartOptions.fill" [yaxis]="reportTotalChartOptions.yaxis"
+    [xaxis]="reportTotalChartOptions.xaxis" [tooltip]="reportTotalChartOptions.tooltip"
+    [autoUpdateSeries]="true"></apx-chart>
+</div>
+

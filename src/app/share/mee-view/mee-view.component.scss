@@ -1,0 +1,31 @@
+.data-view{
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  label{
+    font-size: var(--font-size-default);
+    font-weight: var(--font-weight-default);
+  }
+
+  .text-value{
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    font-weight: var(--font-weight-default);
+    color: #41909c;
+  }
+}
+
+::ng-deep{
+  body.tablet, body.mobile{
+    .data-view{
+      label{
+        font-size: 0.8rem !important;
+      }
+
+      span{
+        font-size: 0.7rem !important;
+      }
+    }
+  }
+}

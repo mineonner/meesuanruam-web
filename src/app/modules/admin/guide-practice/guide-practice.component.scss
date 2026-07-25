@@ -1,0 +1,56 @@
+.table-content {
+  margin-top: 6rem;
+  border-radius: 10px;
+  border: 2px solid var(--second-color);
+  background-color: #ffffff;
+  padding: 1rem 1rem;
+}
+
+.export-button {
+  background-color: #17771c;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: var(--font-weight-default);
+  margin-bottom: 1rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+  .btn-edit {
+    color: #52c2e4;
+    width: 30px;
+    height: 30px;
+  }
+
+  .btn-edit:hover {
+    color: #ffffff;
+    background-color: #52c2e4;
+    border-radius: 15px;
+  }
+
+  .btn-delete {
+    color: #ce5835;
+    width: 30px;
+    height: 30px;
+  }
+
+  .btn-delete:hover {
+    color: #ffffff;
+    background-color: #ce5835;
+    border-radius: 15px;
+  }
+}
+
+
+::ng-deep {
+  body.responsive {
+    .table-content .table-scroll {
+      overflow: scroll;
+    }
+  }
+}

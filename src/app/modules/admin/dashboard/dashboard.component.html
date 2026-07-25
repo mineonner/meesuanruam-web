@@ -1,0 +1,8 @@
+<article class="dashboard-content">
+  <section class="search-section">
+    <m-date-range-picker [(value)]="dateRange"></m-date-range-picker> <button class="search-button" (click)="search()">ค้นหา</button>
+  </section>
+
+  <report-dashboard *ngIf="!!data" [data]="data"></report-dashboard>
+  <comment-dashboard *ngIf="!!data" [data]="data"></comment-dashboard>
+</article>

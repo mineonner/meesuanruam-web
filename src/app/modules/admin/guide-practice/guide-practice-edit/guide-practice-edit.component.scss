@@ -1,0 +1,71 @@
+.edit-content {
+  margin-top: 6rem;
+  border-radius: 10px;
+  border: 2px solid var(--second-color);
+  background-color: #ffffff;
+  padding: 1rem 1rem;
+
+  .title {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    border-radius: 15px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  ::ng-deep {
+    .mat-expansion-panel-header {
+      background-color: #7ed957 !important;
+      color: #ffffff;
+
+      .mat-content {
+        font-size: 1.2rem;
+        justify-content: center;
+      }
+
+      .mat-expansion-indicator svg {
+        fill: #ffffff;
+      }
+    }
+
+    .mat-expansion-panel-body {
+      padding: 1rem;
+    }
+
+    .measures-table {
+      .sub-head {
+        background-color: #b3b5b9;
+      }
+
+      tr td {
+        border: 1px solid #000000;
+        vertical-align: top;
+
+        h3 {
+          font-weight: 800;
+        }
+      }
+    }
+  }
+
+  .save {
+    background-color: #7ed957;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-default);
+    transition: all ease 0.5s;
+
+    display: flex;
+    gap: 0.5rem;
+    align-content: center;
+  }
+
+  .save:hover {
+    box-shadow: 5px -5px 2px gray;
+    transform: translateY(5px);
+  }
+}

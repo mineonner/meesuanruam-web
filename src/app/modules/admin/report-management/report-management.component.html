@@ -1,0 +1,52 @@
+
+
+<article class="table-content">
+  <button (click)="exportData()" class="export-button">Export</button>
+  <div class="table-scroll">
+    <table matSort (matSortChange)="sortData($event)" class="table-mee table-auto">
+      <thead>
+        <tr>
+          <th  class="w-20">#</th>
+          <th mat-sort-header="create_date" class="w-48">วันที่สร้าง</th>
+          <th mat-sort-header="persernal_type" class="w-40">ประเภทบุคคล</th>
+          <th mat-sort-header="report_government_agencies" class="w-60" >หน่วยงานที่แจ้ง</th>
+          <th mat-sort-header="report_topic" class="w-64">เรื่องที่แจ้ง</th>
+        </tr>
+      </thead>
+
+      <!-- <tbody>
+
+      </tbody> -->
+
+      <tbody *ngIf="sortedData.length > 0">
+        <tr *ngFor="let dessert of sortedData;" >
+          <td class="text-center"><button class="btn-view" (click)="openReportForm(dessert)"><fa-icon icon="search"></fa-icon></button></td>
+          <td class="text-center">{{dessert['create_date'] | mDate }}</td>
+          <td class="text-center">{{ persernalTypeOption[dessert['persernal_type']]}}</td>
+          <td>{{dessert['report_government_agencies']}}</td>
+          <td>
+            <p *ngIf="dessert['report_topic']['building_permit_issuance']" class="mt-2">การออกใบอนุญาตการก่อสร้าง</p>
+            <p *ngIf="dessert['report_topic']['procurement_local_road']" class="mt-2">การจัดซื้อจัดจ้างในโครงการทางหลวงท้องถิ่น</p>
+            <p *ngIf="dessert['report_topic']['another']" class="mt-2">อื่นๆ : {{dessert['report_topic']['another_detail']}}</p>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+
+  <section>
+    <m-pagination [items]="sortedDataClone" (changePage)="onChangePage($event)"></m-pagination>
+  </section>
+
+
+</article>
+
+<m-dialog [(isShowDialog)]="isShowDialog">
+  <ng-template #dialogContent>
+    <report-dialog [data]="dataDialog"></report-dialog>
+  </ng-template>
+</m-dialog>
+
+

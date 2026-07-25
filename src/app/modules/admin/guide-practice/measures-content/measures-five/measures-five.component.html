@@ -1,0 +1,269 @@
+<section class="w-full">
+  <table class="table-mee measures-table table-auto">
+
+    <colgroup>
+      <col style="width: 200px;" />
+      <col style="width: 50px;" />
+      <col style="width: 200px;" />
+      <col style="width: 50px;" />
+    </colgroup>
+
+    <thead>
+      <tr>
+        <th class="text-center" colspan="2">ความสามารถในการดำเนินการตามมาตรการ</th>
+        <th class="text-center" colspan="2">ระดับความสำเร็จตามตัวชี้วัด</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- หัวข้อมมาตราการ -->
+      <tr class="sub-head">
+        <td>มาตรการที่ 5 องค์กรปกครองส่วนท้องถิ่นมีการกำหนด
+          และดำเนินการตามมาตรการและกลไกในการต่อต้าน
+          การสมยอมการเสนอราคา ในการจัดซื้อจัดจ้าง
+          โครงการก่อสร้างทางหลวงท้องถิ่นทุกรูปแบบ</td>
+        <td class="text-center">หลักฐานประกอบ</td>
+        <td>ตัวชี้วัดที่ 5 ระดับความเชื่อมั่นของประชาชนต่อการ
+          กระบวนการประกวดราคาและการคัดเลือกผู้รับเหมา
+          ในการจัดซื้อจัดจ้างโครงการก่อสร้างทางหลวงท้องถิ่นที่
+          ปราศจากการสมยอมการเสนอราคา</td>
+        <td class="text-center">หลักฐานประกอบ</td>
+      </tr>
+      <!-- คำอธิบาย -->
+      <tr>
+        <td>
+          <h3>คำอธิบายมาตรการ</h3>
+          <p class="indent-8">องค์กรปกครองส่วนท้องถิ่นมีการออกแบบหรือวาง
+            ระบบ กลไกหรือมีมาตรการในการป้องกันการสมยอมการ
+            เสนอราคาในลักษณะใด ๆ ตามพระราชบัญญัติว่าด้วย
+            ความผิดเกี่ยวกับการเสนอราคาต่อหน่วยงานของรัฐ พ.ศ.
+            2542 ในขั้นตอนการประกวดราคาและการคัดเลือก
+            ผู้รับเหมา เพื่อให้ได้มาซึ่งผู้ที่ได้รับการคัดเลือกที่มี
+            คุณสมบัติ ความสามารถ และความพร้อมที่เหมาะสมกับ
+            การดำเนินโครงการก่อสร้างทางหลวงท้องถิ่น รวมถึง
+            ตรวจสอบและวิเคราะห์สถานะความสัมพันธ์ระหว่าง
+            ผู้เสนอราคากับเจ้าหน้าที่คณะกรรมการจัดซื้อจัดจ้างของ
+            หน ่วยงาน เพื ่อป้องกันผลประโยชน์ทับซ้อน และมี
+            การดำเนินงานป้องกันการให้และรับสินบน เช่น การแสดง
+            เจตจำนงสุจริต/ No Gift Policy/ การจัดทำข้อตกลง
+            คุณธรรมพร้อมทั้งมีการประกาศให้ประชาชนรับทราบ
+            เกี่ยวกับระบบ กลไกหรือมีมาตรการในการป้องกันการ
+            สมยอมการเสนอราคา ในขั้นตอนการประกวดราคาและการคัดเลือกผู้รับเหมา รวมถึงมีการจัดตั้งคณะกรรมการ
+            อิสระที่มาจากผู้มีส่วนได้ส่วนเสียทุกฝ่าย ทำหน้าที่กำกับ
+            ติดตามและดูแลการประกวดราคาและการคัดเลือก
+            ผู้รับเหมา เพื่อให้การประกวดราคาและการคัดเลือก
+            ผู้รับเหมาเป็นไปอย่างโปร่งใส เป็นธรรม และปราศจาก
+            การสมยอมการเสนอราคา
+          </p>
+
+          <p class="indent-8">ทั้งนี้ องค์กรปกครองส่วนท้องถิ่นจะต้องมีการ
+            ดำเนินการที่สำคัญ ดังนี้</p>
+
+          <div class="grid grid-cols-1 gap-3 mt-2">
+            <m-checkbox [value]="measuresData[measuresPrefix + '_Check_1']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_1', $event)">
+              <ng-template #titleAddOn>
+                <div>
+                  มีการออกแบบหรือวางระบบ กลไกหรือมี
+                  มาตรการในการป้องกันการสมยอมการเสนอ
+                  ราคา ในขั้นตอนการประกวดราคาและการ
+                  คัดเลือกผู้รับเหมาซึ่งอย่างน้อยต้อง
+                  ประกอบด้วยการดำเนินการดังนี้
+
+                  <p class="flex">-<span class="w-full ml-2">
+                      มีการกำหนดหลักเกณฑ์การประกวดราคา
+                      และการคัดเลือกผู้ รับเหมาและการ
+                      ตรวจสอบที่เข้มงวด เช่น มีการตรวจสอบ
+                      และวิเคราะห์สถานะและความสัมพันธ์
+                      ระหว่างผู้เสนอราคากับเจ้าหน้าที่หรือ
+                      คณะกรรมการจัดซื้อจัดจ้างของหน่วยงาน
+                      เพื่อป้องกันไม่ให้เกิดการเสนอราคาที่ไม่แข่งขันกันจริง หรือมีกระบวนการของการ
+                      แสดงจำนงสุจริต หรือ No Gift Policy เป็นต้น
+                    </span></p>
+
+                  <p class="flex">-<span class="w-full ml-2">
+                      มีการพัฒนาแนวทางการเปิดเผยข้อมูล
+                      เกี่ยวกับโครงการจัดซื้อจัดจ้างการประกวด
+                      ราคาและการคัดเลือกผู้รับเหมา
+                    </span></p>
+
+                  <p class="flex">-<span class="w-full ml-2">
+                      มีการสร้างกลไกที่เปิดโอกาสให้ประชาชน
+                      เข้ามามีส่วนร่วมในการตรวจสอบการจัดซื้อ
+                      จัดจ้างการประกวดราคาและการคัดเลือก
+                      ผู้รับเหมา
+                    </span></p>
+
+                  <p class="flex">-<span class="w-full ml-2">
+                      กำหนดมาตรการหรือวิธีการจัดการในกรณี
+                      ที่พบเห็นว่ามีพฤติการณ์ในลักษณะใด
+                      ลักษณะหนึ่งที่ถือว่าเป็นการสมยอมการ
+                      เสนอราคา หรือทำให้การประกวดราคาและ
+                      การคัดเลือกผู้รับเหมาไม่เป็นธรรม
+                    </span></p>
+                </div>
+              </ng-template>
+            </m-checkbox>
+
+            <m-checkbox title="มีการประกาศให้ประชาชนรับทราบเกี่ยวกับระบบ
+                  กลไกหรือมีมาตรการในการป้องกันการสมยอม
+                  การเสนอราคา ในขั้นตอนการประกวดราคา
+                  และการคัดเลือกผู้รับเหมา ผ่านช่องทางต่าง ๆ
+                  เช่น ป้ายประชาสัมพันธ์ในพื้นที่ก่อสร้าง ดิจิทัล
+                  แพลตฟอร์ม หรือด้วยวิธีการอื่น ๆ" [value]="measuresData[measuresPrefix + '_Check_2']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_2', $event)"></m-checkbox>
+
+            <m-checkbox title="มีการใช้ระบบหรือกลไกหรือมาตรการในการ
+                      ป้องกันการสมยอมการเสนอราคาในขั้นตอนการ
+                      ประกวดราคาและการคัดเลือกผู้รับเหมาที่
+                      กำหนดไว้ตามข้อ 1) ในทุกโครงการก่อสร้างทาง
+                      หลวงท้องถิ่น" [value]="measuresData[measuresPrefix + '_Check_3']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_3', $event)"></m-checkbox>
+
+            <m-checkbox title="มีการจัดตั้งคณะกรรมการอิสระที่มาจากผู้มี
+                  ส่วนได้ส่วนเสียทุกฝ่าย ทำหน้าที่กำกับติดตามและดูแลการประกวดราคาและการคัดเลือกผู้รับเหมา"
+              [value]="measuresData[measuresPrefix + '_Check_4']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_4', $event)"></m-checkbox>
+
+            <m-checkbox
+              title=" ประชาชนหรือผู้มีส่วนได้ส่วนเสียในพื้นที่ให้การยอมรับผลการประกวดราคาและการคัดเลือกผู้รับเหมา"
+              [value]="measuresData[measuresPrefix + '_Check_5']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_5', $event)"></m-checkbox>
+
+            <h3>หมายเหต <span class="font-[300]">ลักษณะหรือพฤติกรรมที่เป็นการฮั้วประมูล
+                พระราชบัญญัติว่าด้วยความผิดเกี่ยวกับการเสนอราคา
+                ต่อหน่วยงานของรัฐ พ.ศ. 2542 ประกอบด้วยการสมยอม
+                ราคา (มาตรา 4) การจัดฮั้วกัน (มาตรา 5) การข่มขืนใจ
+                ผู้อื่นให้จำยอม (มาตรา 6) การใช้อุบายหลอกลวงหรือ
+                การทำโดยวิธีอื่นใด (มาตรา 6) หรือการเสนอราคาต่ำหรือ
+                ให้ผลประโยชน์สูงกว่าปกติ (มาตรา 8)</span></h3>
+          </div>
+        </td>
+
+        <td>1.เอกสารข้อตกลงคุณธรรมระหว่างหน่วยงานภาครัฐเจ้าของโครงการและ
+          ผู้ประกอบการที่ยื่นข้อเสนอ (เฉพาะโครงการที่มีวงเงินตั้งแต่ 1,000 ล้านบาทขึ้นไป)
+          <br>2.เอกสารการตรวจสอบการมีผลประโยชน์ร่วมกันของผู้เสนอราคากับเจ้าหน้าที่คณะกรรมการจัดซื้อจัดจ้างของหน่วยงาน
+          <br>3.หลักฐานแสดงคุณสมบัติของผู้เสนอราคาที่เกี่ยวข้องกับความเชี่ยวชาญหรือมีประสบการณ์ทำงานก่อสร้างโครงการของหน่วยงานรัฐ
+          <br>4.รายงานผลการสำรวจระดับความเชื่อมั่นของประชาชนต่อการกระบวนการประกวดราคาและการคัดเลือกผู้รับเหมาในการจัดซื้อ
+          จัดจ้างโครงการก่อสร้างทางหลวงท้องถิ่น
+        </td>
+        <td>
+          <h3>คำอธิบายตัวชี้วัด</h3>
+          <p class="indent-8">องค์กรปกครองส่วนท้องถิ่นจะต้องทำการสำรวจ (Public
+            Survey) ความเชื่อมั่นของประชาชนต่อการกระบวนการประกวด
+            ราคาและการคัดเลือกผู้รับเหมาในการจัดซื้อจัดจ้างโครงการ
+            ก่อสร้างทางหลวงท้องถิ่น โดยอย่างน้อยจะต้องทำการสำรวจ
+            ในประเด็นที่เกี่ยวกับความคิด ความเห็น ความรู้สึก และความเชื่อมั่น
+            ในกระบวนการประกวดราคา การคัดเลือกผู้รับเหมาในโครงการ
+            ก่อสร้างทางหลวงท้องถิ่น และการดำเนินการที่ปราศจากการกระทำ
+            หรือพฤติกรรมในลักษณะใดลักษณะหนึ่งที่เป็นการฮั้วประมูล
+            พระราชบัญญัติว่าด้วยความผิดเกี่ยวกับการเสนอราคาต่อ
+            หน่วยงานของรัฐ พ.ศ. 2542 ได้แก่ 1) การสมยอมการเสนอราคา
+            2) การฮั้วกัน 3) การข่มขืนใจผู้อื่นให้จำยอม 4) การใช้อุบาย
+            หลอกลวงหรือกระทำโดยวิธีอื่น ๆ จนเป็นเหตุให้ผู้อื่นไม่มีโอกาส
+            เสนอราคาอย่างเป็นธรรม หรือมีการเสนอราคาโดยหลงผิด หรือ 5)
+            การเสนอราคาต่ำหรือให้ผลประโยชน์สูงกว่าปกติ จนเป็นเหตุให้
+            ปฏิบัติตามสัญญาไม่ได้</p>
+
+          <p class="indent-8">ทั้งนี้ การสำรวจความคิดเห็นของประชาชนดังกล่าวให้ทำการสำรวจเป็นรายปีตามปีงบประมาณ</p>
+        </td>
+        <td>
+          <p class="indent-8">รายงานผลการสำรวจความเชื่อมั่นของประชาชนต่อกระบวนการประกวดราคาและการคัดเลือก
+            ผู้รับเหมาในการจัดซื้อจัดจ้างโครงการก่อสร้างทางหลวงท้องถิ่น</p>
+        </td>
+      </tr>
+
+      <!-- เกณฑ์การให้คะแนน -->
+      <tr>
+        <td>
+          <h3>เกณฑ์การให้คะแนน</h3>
+          <p class="indent-8">พิจารณาจากความสาเร็จของการดาเนินมาตรการของ
+            องค์กรปกครองส่วนท้องถิ่น โดยทำการประเมินเป็นรายปี
+            และมีเกณฑ์ให้คะแนน ดังนี้</p>
+
+          <div class="grid grid-cols-1 gap-3 mt-2">
+            <m-radio displayValue="1" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1 ได้ 1 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="2" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-2 ได้ 2 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="3" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-3 ได้ 3 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="4" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-4 ได้ 4 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="5" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-5 ได้ 5 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+          </div>
+
+        </td>
+
+        <td></td>
+
+        <td>
+          <h3>เกณฑ์การให้คะแนน</h3>
+          <p class="indent-8">พิจารณาจากระดับความเชื่อมั่นของประชาชนต่อการจัดซื้อจัดจ้างโครงการก่อสร้างทางหลวงท้องถิ่น ที่ปราศจากการสมยอมการเสนอราคา ดังน</p>
+
+          <div class="grid grid-cols-1 gap-3 mt-2">
+            <m-radio displayValue="1" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีระดับการรับรู้เฉลี่ยน้อยกว่าร้อยละ 65 ได้ 1 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="2" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีระดับการรับรู้เฉลี่ยร้อยละ 65.00 - 69.99 ได้ 2 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="3" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีระดับการรับรู้เฉลี่ยร้อยละ 70.00 - 74.99 ได้ 3 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="4" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีระดับการรับรู้เฉลี่ยร้อยละ 75.00 - 79.99 ได้ 4 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="5" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีระดับการรับรู้เฉลี่ยร้อยละ 80 ขึ้นไป ได้ 5 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+          </div>
+
+        </td>
+
+        <td></td>
+
+      </tr>
+
+      <!-- ผลคะแนน -->
+      <tr>
+        <td colspan="2" class="text-center">
+          คะแนนความสามารถในการดำเนินการตามมาตรการที่ 5
+          <br> ได้....{{processData[measuresPrefix + '_Process_1']}}.....คะแนน
+        </td>
+        <td colspan="2" class="text-center">
+          คะแนนความสำเร็จตามตัวชี้วัดที่ 5
+          <br> ได้....{{acthievementData[measuresPrefix + '_Acthievement_1']}}.....คะแนน
+        </td>
+      </tr>
+
+    </tbody>
+
+  </table>
+</section>

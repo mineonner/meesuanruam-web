@@ -1,0 +1,77 @@
+<article class="anonymous-content">
+  <section class="anonymous-section" (click)="setAnonymous('personal')"
+    [ngClass]="{'active' : f['persernal_type'].value == 'personal'}">
+    <img src="/assets/images/person.png" class="anonymous-img">
+    <div class="anonymous-input">
+      <h1>เปิดเผยตัวตน</h1>
+      <m-radio-form [displayValue]="'personal'" [name]="'anonymous-radio'" [control]="f['persernal_type']"></m-radio-form>
+    </div>
+  </section>
+
+  <section class="anonymous-section" (click)="setAnonymous('anonymous')"
+    [ngClass]="{'active' : f['persernal_type'].value == 'anonymous'}">
+    <img src="/assets/images/anonymous.png" class="anonymous-img">
+    <div class="anonymous-input">
+      <h1>ไม่เปิดเผยตัวตน</h1>
+      <m-radio-form [displayValue]="'anonymous'" [name]="'anonymous-radio'" [control]="f['persernal_type']"></m-radio-form>
+    </div>
+  </section>
+</article>
+
+<article class="persernal-content" *ngIf="f['persernal_type'].value == 'personal'">
+  <p class="persernal-header">ข้อมูลส่วนบุคคลผู้ร้องเรียน</p>
+  <section class="text-center mt-2">
+    <m-radio-form [options]="radioOptions" [control]="fPer['name_title']" [fields]="{text: 'text' , value: 'value'}"
+      (inputChange)="nameAnotherChange()"></m-radio-form>
+    <m-input-form class="input-name-another" [control]="fPer['name_title_another']"
+      [disabled]="fPer['name_title'].value != 'Another'"></m-input-form>
+  </section>
+
+  <section class="persernal-info">
+    <m-input-form [title]="'ชื่อ'" [control]="fPer['firstname']"></m-input-form>
+    <m-input-form [title]="'นามสกุล'" [control]="fPer['lastname']"></m-input-form>
+    <m-input-form [title]="'อีเมล'" [control]="fPer['email']"></m-input-form>
+    <m-numeric-form [title]="'เบอร์โทรศัพท์'" [control]="fPer['telephone']"></m-numeric-form>
+  </section>
+
+</article>
+
+<article class="report-content">
+  <section>
+    <p class="header">หน่วยงานที่ต้องการแจ้ง</p>
+    <m-input-form class="mt-3 block" [control]="f['report_government_agencies']"></m-input-form>
+  </section>
+
+
+  <section>
+    <p class="header mt-3">เรื่องที่ต้องแจ้ง</p>
+    <m-checkbox-form [title]="'การออกใบอนุญาตการก่อสร้าง'"
+      [control]="fTop['building_permit_issuance']"></m-checkbox-form>
+    <m-checkbox-form [title]="'การจัดซื้อจัดจ้างในโครงการทางหลวงท้องถิ่น'"
+      [control]="fTop['procurement_local_road']"></m-checkbox-form>
+    <m-checkbox-form [title]="'อื่นๆ'" [control]="fTop['another']" (inputChange)="topicAnotherChange()">
+      <ng-template #titleAddOn>
+        <m-input-form class="input-another" [control]="fTop['another_detail']"
+          [disabled]="!fTop['another'].value"></m-input-form>
+      </ng-template>
+    </m-checkbox-form>
+  </section>
+
+
+  <section>
+    <p class="header mt-8 mb-3">รายละเอียดร้องเรียน</p>
+    <m-textarea-form [control]="f['report_detail']" [maxLength]="1000"></m-textarea-form>
+  </section>
+</article>
+
+<article class="file-content">
+  <p class="file-header">เพิ่มเอกสาร / ภาพ / วิดีโอ</p>
+
+  <section>
+    <m-input-file [(files)]="files"></m-input-file>
+  </section>
+</article>
+
+<article class="mt-4">
+  <button class="sent-report" (click)="sentReport()"><m-spinner *ngIf="sentLoader"></m-spinner>ร้องเรียน</button>
+</article>

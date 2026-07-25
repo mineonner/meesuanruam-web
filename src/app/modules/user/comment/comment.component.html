@@ -1,0 +1,45 @@
+<article class="comment-content">
+  <p class="comment-header">นำเสนอความคิดเห็น</p>
+
+  <section class="comment-info">
+    <m-radio-form [title]="'เพศ'"  [options]="genderOptions" [control]="f['gender']"
+      [fields]="{text: 'text' , value: 'value'}"></m-radio-form>
+    <m-input-form [title]="'อาชีพ'" class="occupation" [control]="f['occupation']"></m-input-form>
+  </section>
+
+  <section>
+    <m-google-map [title]="'ตำแหน่งพื้นที่'" [(location)]="location"></m-google-map>
+  </section>
+</article>
+
+<article class="business-content">
+  <section>
+    <p class="header mt-3">เลือกประเภทของแผน</p>
+
+    <m-radio-form [name]="'radio-business'" [displayValue]="'Industrial-Engineering'"
+      [displayText]="'แผนอุตสาหกรรมและการโยธา'" [control]="f['plan_topic']"></m-radio-form>
+
+    <m-radio-form [name]="'radio-business'" [displayValue]="'Another'" [displayText]="'อื่นๆ'" (inputChange)="topicAnotherChange()" [control]="f['plan_topic']">
+      <ng-template #titleAddOn>
+        <m-input-form class="input-another" [disabled]="f['plan_topic'].value != 'Another'" [control]="f['plan_another_detail']"></m-input-form>
+      </ng-template>
+    </m-radio-form>
+
+    <section>
+      <p class="header mt-8 mb-3">รายละเอียด</p>
+      <m-textarea-form [control]="f['detail']" [maxLength]="1000"></m-textarea-form>
+    </section>
+  </section>
+</article>
+
+<article class="file-content">
+  <p class="file-header">เพิ่มเอกสาร / ภาพ / วิดีโอ</p>
+
+  <section>
+    <m-input-file [(files)]="files"></m-input-file>
+  </section>
+</article>
+
+<article class="mt-4">
+  <button class="sent-report" (click)="sentComment()"><m-spinner *ngIf="sentLoader"></m-spinner>ส่งข้อมูล</button>
+</article>

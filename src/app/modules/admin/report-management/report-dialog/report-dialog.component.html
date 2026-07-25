@@ -1,0 +1,36 @@
+<article>
+  <mee-view [title]="'ประเภทบุคคล'" [value]="persernalTypeOption[data.persernal_type]"></mee-view>
+
+
+  <p class="header">ข้อมูลส่วนบุคคลผู้ร้องเรียน</p>
+  <section class="persernal-info">
+
+    <mee-view *ngIf="data.name_title != 'Another'" [title]="'คำนำหน้าชื่อ'" [value]="nameTitleOption[data.name_title]"></mee-view>
+    <mee-view *ngIf="data.name_title == 'Another'" [title]="'คำนำหน้าชื่อ'" [value]="data.name_title_another"></mee-view>
+
+    <mee-view  [title]="'ชื่อ-นามสกุล'" [value]="data.firstname ? data.firstname + ' ' + data.lastname : '-'"></mee-view>
+
+    <mee-view  [title]="'อีเมล'" [value]="data.email"></mee-view>
+
+    <mee-view  [title]="'เบอร์โทรศัพท์'" [value]="data.telephone"></mee-view>
+  </section>
+
+  <p class="header">รายละเอียดร้องเรียน</p>
+  <section class="report-info">
+    <mee-view  [title]="'หน่วยงานที่แจ้ง'" [value]="data.report_government_agencies"></mee-view>
+
+    <mee-view  [title]="'เรื่องที่แจ้ง'">
+      <ng-template #addValue>
+        <p *ngIf="data.report_topic.building_permit_issuance">การออกอนุญาติการก่อสร้าง</p>
+          <p *ngIf="data.report_topic.procurement_local_road"  >การจัดซื้อจัดจ้างในโครงการถนนในท้องถิ่น</p>
+          <p *ngIf="data.report_topic.another" >อื่นๆ : {{data.report_topic.another_detail}}</p>
+      </ng-template>
+    </mee-view>
+
+    <mee-view class="report-detail"  [title]="'รายละเอียดร้องเรียน'" [value]="data.report_detail"></mee-view>
+  </section>
+
+  <m-input-file [(files)]="data.files" [mode]="'view'"></m-input-file>
+</article>
+
+

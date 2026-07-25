@@ -1,0 +1,26 @@
+<article>
+  <p class="header">ข้อมูลความคิดเห็น</p>
+
+  <section class="comment-info">
+    <mee-view [title]="'เพศ'" [value]="genderOptions[data.gender]"></mee-view>
+
+    <mee-view [title]="'อาชีพ'" [value]="data.occupation"></mee-view>
+
+    <mee-view  [title]="'ประเภทแผน'">
+      <ng-template #addValue>
+        <p >{{ planTopicOptions[data.plan_topic]}} <span *ngIf="data.plan_topic == 'Another'">:
+          {{data['plan_another_detail']}}</span></p>
+      </ng-template>
+    </mee-view>
+
+    <mee-view [title]="'รายละเอียด'" [value]="data.detail"></mee-view>
+  </section>
+
+  <p class="header">ตำแหน่งพื้นที่</p>
+  <section class="map-info">
+    <m-google-map [title]="'ตำแหน่งพื้นที่'" [(location)]="data.location" [mode]="'view'"></m-google-map>
+  </section>
+
+  <m-input-file [(files)]="data.files" [mode]="'view'"></m-input-file>
+
+</article>

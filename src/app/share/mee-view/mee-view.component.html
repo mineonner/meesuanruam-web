@@ -1,0 +1,6 @@
+<div class="data-view">
+  <label for="text">{{title}}</label>
+  <div class="text-value">
+    <span *ngIf="textValue" [innerHTML]="textValue ? (textValue | linebreaks) : '-'"></span> <ng-container *ngTemplateOutlet="mAddValue"></ng-container>
+  </div>
+</div>

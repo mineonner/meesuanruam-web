@@ -1,0 +1,193 @@
+<section class="w-full">
+  <table class="table-mee measures-table table-auto">
+
+    <colgroup>
+      <col style="width: 200px;" />
+      <col style="width: 50px;" />
+      <col style="width: 200px;" />
+      <col style="width: 50px;" />
+    </colgroup>
+
+    <thead>
+      <tr>
+        <th class="text-center" colspan="2">ความสามารถในการดำเนินการตามมาตรการ</th>
+        <th class="text-center" colspan="2">ระดับความสำเร็จตามตัวชี้วัด</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- หัวข้อมมาตราการ -->
+      <tr class="sub-head">
+        <td>มาตรการที่ 8 องค์กรปกครองส่วนท้องถิ่นมีการรายงานการเบิกจ่ายในแต่ละงวดงาน
+          เพื่อให้การดำเนินงานเป็นไปตามสัญญาการจัดซื้อจัดจ้าง</td>
+        <td class="text-center">หลักฐานประกอบ</td>
+        <td>ตัวชี้วัดที่ 8 ร้อยละของจำนวนสัญญาโครงการที่มีการจัดให้มี
+          การควบคุมและตรวจสอบการเบิกจ่าย ตลอดจนมีการรายงาน
+          การเบิกจ่ายในแต่ละงวดงานเพื่อให้การดำเนินงานเป็นไปตามสัญญา</td>
+        <td class="text-center">หลักฐานประกอบ</td>
+      </tr>
+      <!-- คำอธิบาย -->
+      <tr>
+        <td>
+          <h3>คำอธิบายมาตรการ</h3>
+          <p class="indent-8">องค์กรปกครองส่วนท้องถิ่นจะต้องมีการเบิกจ่ายที่
+            เป็นไปตามความก้าวหน้าและระยะเวลาของโครงการที่
+            กำหนดไว้ในสัญญา มีการกำหนดหลักเกณฑ์และแนวทาง
+            การเบิกจ่ายเงินในแต่ละงวดงานอย่างชัดเจน ซึ่งอาจจะ
+            จัดทำในรูปแบบคู่มือและแบบฟอร์มมาตรฐานสำหรับ
+            การรายงานการเบิกจ่ายงบประมาณ หรือในรูปแบบตาม
+            ความเหมาะสม มีการแต่งตั้งผู้รับผิดชอบซึ่งเป็นคนกลาง
+            (Third Party) ทำหน้าที่ในการควบคุมและตรวจสอบ
+            การเบิกจ่ายเงิน ตั้งแต่การทำเรื่องขอเบิกจ่ายเงิน การ
+            อนุมัติการเบิกจ่ายเงิน และเอกสารที่เกี่ยวข้องกับการ
+            เบิกจ่าย เพื่อให้การเบิกจ่ายเป็นไปอย่างถูกต้องและตรง
+            ตามเงื่อนไขการส่งมอบงานในแต่ละงวดตามสัญญา
+            รวมถึงองค์กรปกครองส่วนท้องถิ่นมีการเปิดเผยข้อมูล
+            การเบิกจ่ายงวดงานต่อสาธารณะ และมีการรายงาน
+            เผยแพร่ผลการควบคุมแลตรวจสอบการเบิกจ่ายเงินใน
+            แต่ละงวดงานต่อสาธารณะทุกครั้ง ทั้งนี้ องค์กรปกครอง
+            ส่วนท้องถิ่นจะต้องมีการดำเนินการที่สำคัญ ดังนี้
+          </p>
+
+          <div class="grid grid-cols-1 gap-3 mt-2">
+            <m-checkbox title="มีการกำหนดหลักเกณฑ์และเงื่อนไขการเบิกจ่ายให้สอดคล้องกับข้อตกลงในสัญญา
+              โครงการก่อสร้างทางหลวงท้องถิ่น" [value]="measuresData[measuresPrefix + '_Check_1']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_1', $event)"></m-checkbox>
+
+            <m-checkbox title="มีการกำหนดรูปแบบรายงานการเบิกจ่าย/หลักฐานและเอกสารในการตรวจรับงานตลอดจนกำหนดระยะเวลาในการยื่นรายการ
+              การเบิกจ่ายเงิน เพื่อให้ดำเนินการถูกต้องตามระเบียบการเงิน"
+              [value]="measuresData[measuresPrefix + '_Check_2']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_2', $event)"></m-checkbox>
+
+            <m-checkbox
+              title="มีการแต่งตั้งผู้รับผิดชอบซึ่งเป็นคนกลาง(Third Party) ทำหน้าที่ในการควบคุมและตรวจสอบการเบิกจ่ายเงิน"
+              [value]="measuresData[measuresPrefix + '_Check_3']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_3', $event)"></m-checkbox>
+
+            <m-checkbox title="มีการดำเนินตรวจสอบและอนุมัติการเบิกจ่ายเงิน โดยพิจารณาว่าได้ดำเนินการตรงตามเงื่อนไขการส่งมอบงานในแต่ละงวดตามสัญญา
+              พร้อมทั้งตรวจสอบความถูกต้องของเอกสารในการเบิกจ่ายเงินอย่างครบถ้วน"
+              [value]="measuresData[measuresPrefix + '_Check_4']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_4', $event)"></m-checkbox>
+
+            <m-checkbox title="มีการรายงานและเผยแพร่ผลการควบคุมและตรวจสอบการเบิกจ่ายเงินในแต่ละงวดงานต่อสาธารณะทุกครั้ง"
+              [value]="measuresData[measuresPrefix + '_Check_5']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_5', $event)"></m-checkbox>
+
+          </div>
+
+        </td>
+
+        <td>1.คำสั่งแต่งตั้งผู้รับผิดชอบซึ่งเป็นคนกลาง (Third Party) ทำหน้าที่ในการควบคุมและตรวจสอบการเบิกจ่ายเงิน
+          <br>2.รายงานผลการควบคุมและตรวจสอบการเบิกจ่ายเงินในแต่ละงวดงาน
+          <br>3.หลักฐานการเผยแพร่ผลการควบคุมและตรวจสอบการเบิกจ่ายเงินในแต่ละงวดงานต่อสาธารณะ
+        </td>
+        <td>
+          <h3>คำอธิบายตัวชี้วัด</h3>
+          <p class="indent-8">องค์กรปกครองส่วนท้องถิ่น จะต้องมีการดำเนินการตามมาตรการที่กำหนด
+            ทั้งนี้ความสำเร็จของการดำเนินการตาม
+            ตัวชี้วัดนี้ พิจารณาจากร้อยละของจำนวนสัญญาโครงการที่มีการจัดให้มีการควบคุมและตรวจสอบการเบิกจ่าย
+            ตลอดจนมีการรายงานการเบิกจ่ายในแต่ละงวดงานเพื่อให้การดำเนินงาน
+            เป็นไปตามสัญญา โดยจะต้องมีการดำเนินการตามมาตรการที่กำหนดครบทั้ง 5 ขั้นตอน</p>
+        </td>
+        <td>
+          <p class="indent-8">รายงานสรุปผลจำนวนหรือสัดส่วนของโครงการฯ ที่มีการจัดให้มีการควบคุมและตรวจสอบการเบิกจ่าย
+            ในแต่ละงวดงานเพื่อให้การดำเนินงานเป็นไปตามสัญญา</p>
+        </td>
+      </tr>
+
+      <!-- เกณฑ์การให้คะแนน -->
+      <tr>
+        <td>
+          <h3>เกณฑ์การให้คะแนน</h3>
+          <p class="indent-8">พิจารณาจากความสาเร็จของการดาเนินมาตรการของ
+            องค์กรปกครองส่วนท้องถิ่น โดยทำการประเมินเป็นรายปี
+            และมีเกณฑ์ให้คะแนน ดังนี้</p>
+
+          <div class="grid grid-cols-1 gap-3 mt-2">
+            <m-radio displayValue="1" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1 ได้ 1 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="2" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-2 ได้ 2 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="3" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-3 ได้ 3 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="4" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-4 ได้ 4 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="5" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-5 ได้ 5 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+          </div>
+
+        </td>
+
+        <td></td>
+
+        <td>
+          <h3>เกณฑ์การให้คะแนน</h3>
+          <p class="indent-8">พิจารณาจากร้อยละของจำนวนสัญญาโครงการที่มีการจัดให้มีการควบคุมและตรวจสอบการเบิกจ่าย
+            และมีการรายงานการ
+            เบิกจ่ายในแต่ละงวดงาน ดังน</p>
+
+          <div class="grid grid-cols-1 gap-3 mt-2">
+            <m-radio displayValue="1" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีการดำเนินการร้อยละ 75-79.99 ได้ 1 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="2" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีการดำเนินการร้อยละ 80-84.99 ได้ 2 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="3" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีการดำเนินการร้อยละ 85-89.99 ได้ 3 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="4" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีการดำเนินการร้อยละ 90-94.99 ได้ 4 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="5" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีการดำเนินการร้อยละ 95 ขึ้นไป ได้ 5 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+          </div>
+
+        </td>
+
+        <td></td>
+
+      </tr>
+
+      <!-- ผลคะแนน -->
+      <tr>
+        <td colspan="2" class="text-center">
+          คะแนนความสามารถในการดำเนินการตามมาตรการที่ 8
+          <br> ได้....{{processData[measuresPrefix + '_Process_1']}}.....คะแนน
+        </td>
+        <td colspan="2" class="text-center">
+          คะแนนความสำเร็จตามตัวชี้วัดที่ 8
+          <br> ได้....{{acthievementData[measuresPrefix + '_Acthievement_1']}}.....คะแนน
+        </td>
+      </tr>
+
+    </tbody>
+
+  </table>
+</section>

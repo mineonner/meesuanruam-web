@@ -1,0 +1,154 @@
+<section class="edit-content">
+   <article class="flex justify-end mt-2 gap-2">
+    <button class="export-button" (click)="exportProjectInfo()" class="save">export</button>
+    <button (click)="save()" class="save">บันทึกการประเมิน</button>
+  </article>
+
+  <article class="grid grid-cols-3 gap-4 mt-4">
+    <m-input-form title="ชื่อโครงการ" class="col-span-2" [maxLength]="200"
+    [control]="f['name']">
+
+    </m-input-form>
+    <m-dropdowm-form title="สถานะ" [control]="f['status']" [option]="option"
+    [serverSide]="false"></m-dropdowm-form>
+  </article>
+
+  <article class="mt-4">
+    <h1 class="title">คะแนนการประเมินความสามารถในการดาเนินงานรายมาตรการและรายตัวชี้วัด</h1>
+    <span class="mt-4 block">ให้ผู้ประเมินทำเครื่องหมาย <fa-icon icon="square-check"></fa-icon>
+      หน้าข้อความทุกข้อที่พบเห็นการดำเนินการในเชิงประจักษ์ ทั้งนี้ คะแนนความสามารถในการดำเนินการตามมาตรการแต่ละมาตรการจะ
+      “มาก” หรือ “น้อย” เป็นไปตามจำนวนข้อที่องค์กรปกครองส่วนท้องถิ่นสามารถดำเนินการได้
+      พร้อมมีเอกสารหรือหลักฐานที่แสดงให้เป็นถึงการดำเนินการ</span>
+  </article>
+
+  <article class="mt-4">
+    <mat-accordion multi>
+      <mat-expansion-panel class="mt-4">
+        <mat-expansion-panel-header>
+          มาตราการที่ 1
+        </mat-expansion-panel-header>
+
+        <ng-template matExpansionPanelContent>
+          <measures-one [(data)]="data"></measures-one>
+        </ng-template>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          มาตราการที่ 2
+        </mat-expansion-panel-header>
+
+        <ng-template matExpansionPanelContent>
+          <measures-two [(data)]="data"></measures-two>
+        </ng-template>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          มาตราการที่ 3
+        </mat-expansion-panel-header>
+
+        <ng-template matExpansionPanelContent>
+          <measures-three [(data)]="data"></measures-three>
+        </ng-template>
+      </mat-expansion-panel>
+
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          มาตราการที่ 4
+        </mat-expansion-panel-header>
+
+        <ng-template matExpansionPanelContent>
+          <measures-four [(data)]="data"></measures-four>
+        </ng-template>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          มาตราการที่ 5
+        </mat-expansion-panel-header>
+
+        <ng-template matExpansionPanelContent>
+          <measures-five [(data)]="data"></measures-five>
+        </ng-template>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          มาตราการที่ 6
+        </mat-expansion-panel-header>
+
+        <ng-template matExpansionPanelContent>
+          <measures-six [(data)]="data"></measures-six>
+        </ng-template>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          มาตราการที่ 7
+        </mat-expansion-panel-header>
+
+        <ng-template matExpansionPanelContent>
+          <measures-seven [(data)]="data"></measures-seven>
+        </ng-template>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          มาตราการที่ 8
+        </mat-expansion-panel-header>
+
+        <ng-template matExpansionPanelContent>
+          <measures-eight [(data)]="data"></measures-eight>
+        </ng-template>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          มาตราการที่ 9
+        </mat-expansion-panel-header>
+
+        <ng-template matExpansionPanelContent>
+          <measures-nine [(data)]="data"></measures-nine>
+        </ng-template>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          มาตราการที่ 10
+        </mat-expansion-panel-header>
+
+        <ng-template matExpansionPanelContent>
+          <measures-ten [(data)]="data"></measures-ten>
+        </ng-template>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          มาตราการที่ 11
+        </mat-expansion-panel-header>
+
+        <ng-template matExpansionPanelContent>
+          <measures-eleven [(data)]="data"></measures-eleven>
+        </ng-template>
+      </mat-expansion-panel>
+
+            <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          มาตราการที่ 12
+        </mat-expansion-panel-header>
+
+        <ng-template matExpansionPanelContent>
+          <measures-twelve [(data)]="data"></measures-twelve>
+        </ng-template>
+      </mat-expansion-panel>
+
+    </mat-accordion>
+  </article>
+
+  <article class="flex justify-end mt-2">
+    <button (click)="save()" class="save">บันทึกการประเมิน</button>
+  </article>
+
+</section>

@@ -1,0 +1,209 @@
+<section class="w-full">
+  <table class="table-mee measures-table table-auto">
+
+    <colgroup>
+      <col style="width: 200px;" />
+      <col style="width: 50px;" />
+      <col style="width: 200px;" />
+      <col style="width: 50px;" />
+    </colgroup>
+
+    <thead>
+      <tr>
+        <th class="text-center" colspan="2">ความสามารถในการดำเนินการตามมาตรการ</th>
+        <th class="text-center" colspan="2">ระดับความสำเร็จตามตัวชี้วัด</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- หัวข้อมมาตราการ -->
+      <tr class="sub-head">
+        <td>มาตรการที่ 10 องค์กรปกครองส่วนท้องถิ่นให้หน่วยงาน
+          ภาครัฐที่เกี่ยวข้องในการเฝ้าระวัง ป้องกันและปราบปราม
+          การทุจริตในพื้นที่เข้ามามีส่วนร่วมในการเฝ้า
+          สังเกตการณ์ในการตรวจรับงาน
+        </td>
+        <td class="text-center">หลักฐานประกอบ</td>
+        <td>ตัวชี้วัดที่ 10 ร้อยละของจำนวนโครงการที่ดำเนินการสำเร็จโดยปราศจากการร้องเรียนการทุจริต</td>
+        <td class="text-center">หลักฐานประกอบ</td>
+      </tr>
+      <!-- คำอธิบาย -->
+      <tr>
+        <td>
+          <h3>คำอธิบายมาตรการ</h3>
+          <p class="indent-8">องค์กรปกครองส่วนท้องถิ่นมีการกำหนดนโยบาย
+            หรือมีการทำความตกลง (MOU) ร่วมกับหน่วยงานภาครัฐที่
+            เกี่ยวข้องกับการป้องกันและปราบปรามการทุจริต เช่น
+            สำนักงาน ป.ป.ท เขต สำนักงาน ป.ป.ช จังหวัด หรือ
+            สำนักงานตรวจเงินแผ่นดิน เข้ามามีส่วนร่วมในการเฝ้า
+            สังเกตการณ์ตรวจรับงาน โดยการจัดตั้งในรูปของ
+            คณะกรรมการร่วมในการสังเกตการณ์ ตรวจสอบพฤติกรรม
+            ที่อาจจะเข้าข่ายการทุจริตหรือประพฤติมิชอบ มีการจัดทำ
+            รายงานข้อสังเกต (Observation Report) และมีการรับรอง
+            ผลการตรวจสอบจากหน่ วยงานที่เข้าร่วมในการ
+            สังเกตการณ์เสนอต่อองค์กรปกครองส่วนท้องถิ่นและ
+            หน่วยงานที่เกี่ยวข้อง มีการเผยแพร่และประชาสัมพันธ์การ
+            ที่บุคลากรจากหน่วยงานภาครัฐเกี่ยวกับการเฝ้าระวัง การ
+            ป้องกันและการปราบปรามการทุจริตเข้ามามีส่วนร่วมใน
+            การเฝ้าสังเกตการณ์ตรวจรับงานต่อสาธารณะ รวมถึงมีการ
+            หาแนวทางการเฝ้าระวัง การป้องกันและการปราบปรามการทุจริตร่วมกับหน่วยงานภาครัฐที่เกี่ยวข้องกับการ
+            ป้องกันและปราบปรามการทุจริตดังกล่าว ทั้งนี้ องค์กร
+            ปกครองส่วนท้องถิ่นจะต้องมีการดำเนินการที่สำคัญ
+            ดังนี้</p>
+
+          <div class="grid grid-cols-1 gap-3 mt-2">
+            <m-checkbox title="มีการกำหนดนโยบายหรือมีการทำความตกลง
+              (MOU) ร่วมกับหน่วยงานภาครัฐที่เกี่ยวข้องกับ
+              การป้องกันและปราบปรามการทุจริตเข้ามามี
+              ส่วนร่วมในการเฝ้าสังเกตการณ์ตรวจรับงาน" [value]="measuresData[measuresPrefix + '_Check_1']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_1', $event)"></m-checkbox>
+
+            <m-checkbox title="มีการจัดตั้งคณะกรรมการที่เป็นบุคลากรจาก
+              หน่วยงานที่เกี่ยวข้องกับการเฝ้าระวัง ป้องกัน และ
+              ปราบปรามการทุจริต เข้าร่วมเฝ้าสังเกตการณ์
+              การตรวจรับงานโครงการก่อสร้างทางหลวง
+              ท้องถิ่น เพื่อป้องกันปัญหาการทุจริต" [value]="measuresData[measuresPrefix + '_Check_2']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_2', $event)"></m-checkbox>
+
+            <m-checkbox title="มีการจัดทำสรุปรายงานการที่บุคลากรจาก
+            หน่วยงานภาครัฐที่เกี่ยวข้องกับการเฝ้าระวัง
+            ป้องกัน และปราบปรามการทุจริตเข้าร่วมเฝ้า
+            สังเกตการณ์ตรวจรับงานโครงการดังกล่าว พร้อม
+            ทั้งมีการรับรองผลการตรวจสอบจากหน่วยงานที่
+            เข้าร่วมในการสังเกตการณ์" [value]="measuresData[measuresPrefix + '_Check_3']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_3', $event)"></m-checkbox>
+
+            <m-checkbox title="มีการเผยแพร่และประชาสัมพันธ์การที่บุคลากร
+            จากหน่วยงานภาครัฐเกี่ยวกับการเฝ้าระวัง การ
+            ป้องกัน และการปราบปรามการทุจริตเข้ามา
+            มีส่วนร่วมในการเฝ้าสังเกตการณ์ตรวจรับงานต่อ
+            สาธารณะ" [value]="measuresData[measuresPrefix + '_Check_4']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_4', $event)"></m-checkbox>
+
+            <m-checkbox title="มีการหาแนวทางการดำเนินงานร่ วมกับ
+              หน่วยงานภาครัฐที่เกี่ยวข้องกับการเฝ้าระวัง และ
+              ป้องกันการทุจริต เพื่อยกระดับการดำเนินงาน
+              เกี่ยวกับการจัดซื้อจัดจ้างโครงการก่อสร้างทาง
+              หลวงท้องถิ่นให้มีประสิทธิภาพและปราศจากการ
+              ทุจริตทุกรูปแบบ" [value]="measuresData[measuresPrefix + '_Check_5']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_5', $event)"></m-checkbox>
+
+          </div>
+
+        </td>
+
+        <td>1.เอกสารบันทึกข้อตกลงความร่วมมือ (MOU)ร่วมกับหน่วยงานภาครัฐที่เกี่ยวข้องการป้องกันและปราบปรามการทุจริต
+          <br>2.คำสั่งแต่งตั้งคณะกรรมการที่เป็นบุคลากรจากหน่วยงานที่เกี่ยวข้องกับการเฝ้าระวัง ป้องกัน
+          และปราบปรามการทุจริต
+          เข้าร่วมเฝ้าสังเกตการณ์การตรวจรับงานโครงการก่อสร้างทางหลวงท้องถิ่น
+          <br>3.สรุปรายงานผลการเฝ้าสังเกตการณ์ในการตรวจรับงานในโครงการก่อสร้างทางหลวงท้องถิ่นและรายงานการร้องเรียนการทุจริต
+          <br>4.หลักฐานการเผยแพร่รายงานผลการตรวจรับงานและรายงานการร้องเรียนการทุจริต
+        </td>
+        <td>
+          <h3>คำอธิบายตัวชี้วัด</h3>
+          <p class="indent-8">องค์กรปกครองส่วนท้องถิ่น จะต้องมีการดำเนินการตาม
+            มาตรการที่กำหนด ทั้งนี้ ความสำเร็จของการดำเนินการตาม
+            ตัวชี้วัดนี้ พิจารณาจากร้อยละของจำนวนโครงการที่ดำเนินการ
+            สำเร็จโดยปราศจากการร้องเรียนการทุจริตโดยจะต้องมีการ
+            ดำเนินการตามมาตรการที่กำหนดครบทั้ง 5 ขั้นตอน
+          </p>
+        </td>
+        <td>
+          <p class="indent-8">รายงานสรุปจำนวนหรือสัดส่วนโครงการฯที่ดำเนินการสำเร็จโดยปราศจากการร้องเรียนการทุจริต</p>
+        </td>
+      </tr>
+
+      <!-- เกณฑ์การให้คะแนน -->
+      <tr>
+        <td>
+          <h3>เกณฑ์การให้คะแนน</h3>
+          <p class="indent-8">พิจารณาจากความสาเร็จของการดาเนินมาตรการของ
+            องค์กรปกครองส่วนท้องถิ่น โดยทำการประเมินเป็นรายปี
+            และมีเกณฑ์ให้คะแนน ดังนี้</p>
+
+          <div class="grid grid-cols-1 gap-3 mt-2">
+            <m-radio displayValue="1" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1 ได้ 1 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="2" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-2 ได้ 2 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="3" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-3 ได้ 3 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="4" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-4 ได้ 4 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="5" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-5 ได้ 5 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+          </div>
+
+        </td>
+
+        <td></td>
+
+        <td>
+          <h3>เกณฑ์การให้คะแนน</h3>
+          <p class="indent-8">พิจารณาจากร้อยละของจำนวนโครงการที่ดำเนินการสำเร็จโดยปราศจากการร้องเรียนการทุจริต</p>
+
+          <div class="grid grid-cols-1 gap-3 mt-2">
+            <m-radio displayValue="1" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีการดำเนินการร้อยละ 75-79.99 ได้ 1 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="2" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีการดำเนินการร้อยละ 80-84.99 ได้ 2 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="3" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีการดำเนินการร้อยละ 85-89.99 ได้ 3 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="4" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีการดำเนินการร้อยละ 90-94.99 ได้ 4 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="5" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีการดำเนินการร้อยละ 95 ขึ้นไป ได้ 5 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+          </div>
+
+        </td>
+
+        <td></td>
+
+      </tr>
+
+      <!-- ผลคะแนน -->
+      <tr>
+        <td colspan="2" class="text-center">
+          คะแนนความสามารถในการดำเนินการตามมาตรการที่ 10
+          <br> ได้....{{processData[measuresPrefix + '_Process_1']}}.....คะแนน
+        </td>
+        <td colspan="2" class="text-center">
+          คะแนนความสำเร็จตามตัวชี้วัดที่ 10
+          <br> ได้....{{acthievementData[measuresPrefix + '_Acthievement_1']}}.....คะแนน
+        </td>
+      </tr>
+
+    </tbody>
+
+  </table>
+</section>

@@ -1,0 +1,217 @@
+<section class="w-full">
+  <table class="table-mee measures-table table-auto">
+
+    <colgroup>
+      <col style="width: 200px;" />
+      <col style="width: 50px;" />
+      <col style="width: 200px;" />
+      <col style="width: 50px;" />
+    </colgroup>
+
+    <thead>
+      <tr>
+        <th class="text-center" colspan="2">ความสามารถในการดำเนินการตามมาตรการ</th>
+        <th class="text-center" colspan="2">ระดับความสำเร็จตามตัวชี้วัด</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- หัวข้อมมาตราการ -->
+      <tr class="sub-head">
+        <td>มาตรการที่ 12 อองค์กรปกครองส่วนท้องถิ่นมีการ
+          ปรับปรุงการดำเนินการป้องกันการติดสินบนในโครงการ
+          ก่อสร้างทางหลวงท้องถิ่น
+        </td>
+        <td class="text-center">หลักฐานประกอบ</td>
+        <td>ตัวชี้วัดที่ 12 ระดับความสำเร็จในการดำเนินการตาม
+          แผนพัฒนาการดำเนินงาน (Improvement Plan) ในการ
+          ป้องกันการติดสินบนในโครงการก่อสร้างทางหลวงท้องถิ่น</td>
+        <td class="text-center">หลักฐานประกอบ</td>
+      </tr>
+      <!-- คำอธิบาย -->
+      <tr>
+        <td>
+          <h3>คำอธิบายมาตรการ</h3>
+          <p class="indent-8">ภายหลังจากที่หน่วยงานดำเนินการตรวจประเมิน
+            สมรรถนะการป้องกันการติดสินบนในการจัดซื้อจัดจ้าง
+            โครงการก่อสร้างทางหลวงท้องถิ่นแล้ว หน่วยงานจะต้อง
+            นำผลที่ได้รับมาจัดทำเป็น Improvement Plan และนำ
+            แนวทางดังกล่าวมาปรับปรุงและพัฒนามาตรการป้องกัน
+            การติดสินบนของหน่วยงาน ทั้งนี้เพื่อลดความเสี่ยงการ
+            ให้และรับสินบน เสริมสร้างความโปร่งใส และสามารถเพิ่ม
+            ประสิทธิภาพการทำงานได้อย่างเป็นรูปธรรมมากยิ่งขึ้น</p>
+
+          <p class="indent-8">ทั้งนี้ องค์กรปกครองส่วนท้องถิ่นจะต้องมีการดำเนินการที่สำคัญประกอบด้วย</p>
+
+          <div class="grid grid-cols-1 gap-3 mt-2">
+            <m-checkbox
+              title="จัดตั้งคณะกรรมการในการขับเคลื่อนการปรับปรุงการดำเนินการป้องกันการติดสินบนในโครงการก่อสร้างทางหลวงท้องถิ่น"
+              [value]="measuresData[measuresPrefix + '_Check_1']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_1', $event)"></m-checkbox>
+
+            <m-checkbox title="มีการนำภาคประชาชน และกลุ่มผู้มีส่วนได้ส่วนเสียเข้ามามีส่วนร่วมในการปรับปรุงและยกระดับการดำเนินงานการป้องกันการติดสินบนใน
+              โครงการก่อสร้างทางหลวงท้องถิ่น" [value]="measuresData[measuresPrefix + '_Check_2']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_2', $event)"></m-checkbox>
+
+            <m-checkbox title="มีการดำเนินงานตามแผนพัฒนาการดำเนินงาน(Improvement Plan)"
+              [value]="measuresData[measuresPrefix + '_Check_3']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_3', $event)"></m-checkbox>
+
+            <m-checkbox
+              title="มีการติดตามและประเมินผลภายหลังมีการปรับปรุงการดำเนินการป้องกันการติดสินบนโครงการก่อสร้างทางหลวงท้องถิ่น"
+              [value]="measuresData[measuresPrefix + '_Check_4']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_4', $event)"></m-checkbox>
+
+            <m-checkbox
+              title="จัดทำรายงานผลการดำเนินงานปรับปรุงการดำเนินการป้องกันการติดสินบนในโครงการก่อสร้างทางหลวงท้องถิ่น"
+              [value]="measuresData[measuresPrefix + '_Check_5']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_5', $event)"></m-checkbox>
+
+          </div>
+
+        </td>
+
+        <td>
+          1.คำสั่งแต่งตั้งคณะกรรมการในการขับเคลื่อนการปรับปรุงการดำเนินการป้องกันการติดสินบนในโครงการก่อสร้างทางหลวงท้องถิ่น
+          <br>2.รายงานการประชุม/หลักฐานเกี่ยวกับการให้ภาคประชาชน
+          และกลุ่มผู้มีส่วนได้ส่วนเสียเข้ามามีส่วนร่วมในการปรับปรุงและยกระดับ
+          การดำเนินงานการป้องกันการติดสินบนในโครงการก่อสร้างทางหลวงท้องถิ่น
+
+          <br>3.รายงานผลการดำเนินงานปรับปรุงการป้องกันการติดสินบนในโครงการก่อสร้างทางหลวงท้องถิ่น
+        </td>
+        <td>
+          <h3>คำอธิบายตัวชี้วัด</h3>
+          <p class="indent-8">องค์กรปกครองส่วนท้องถิ่นจะต้องนำแผนพัฒนาการ
+            ดำเนินงาน (Improvement Plan) ในการป้องกันการติด
+            สินบนในโครงการก่อสร้างทางหลวงท้องถิ่น ไปใช้ในการ
+            พัฒนาการป้องกันการติดสินบนโครงการก่อสร้างทางหลวง
+            ท้องถิ่นที่มีประสิทธิภาพ โดยสามารถพิจารณาความสำเร็จของ
+            การดำเนินงาน ดังนี้
+          </p>
+
+          <p class="indent-5 ml-3">1) ไม่มีแผนพัฒนาการดำเนินงาน (Improvement Plan)
+            หรือมีแผนพัฒนาการดำเนินงาน แต่แผนไม่ได้ถูกนำไปปฏิบัติ</p>
+
+          <p class="indent-5 ml-3">2) แผนพัฒนาการดำเนินงานถูกนำไปใช้เพียงบางส่วน
+            หรือมีข้อบกพร่องสำคัญในมาตรการป้องกันการติด
+            สินบน หรือปรากฏข้อมูลเกี่ยวกับพฤติกรรมที่อาจ
+            เกี่ยวข้องกับการติดสินบน หรือระบบตรวจสอบที่ขาด
+            ความโปร่งใส</p>
+
+          <p class="indent-5 ml-3">3) แผนพัฒนาการดำเนินงานถูกนำไปใช้ในหน่วยงาน
+            อย่างครบถ้วน แต่มาตรการป้องกันการติดสินบนยังมี
+            ช่องว่างให้ปรับปรุง </p>
+
+          <p class="indent-5 ml-3">4) แผนพัฒนาการดำเนินงานถูกนำไปปฏิบัติอย่าง
+            ครบถ้วน มีมาตรการป้องกันการติดสินบนที่ชัดเจน
+            และมีผลในทางปฏิบัติ มีการตรวจสอบติดตามผลอย่าง
+            ต่อเนื่อง และมีการปรับปรุงมาตรการตามความ
+            เหมาะสม แต่อาจไม่มีหลักฐานชี้ชัดถึงการติดสินบน </p>
+
+          <p class="indent-5 ml-5">5) แผนพัฒนาการดำเนินงานถูกนำไปปฏิบัติอย่าง
+            ครบถ้วนสมบูรณ์ทุกด้าน มีการดำเนินมาตรการ
+            ป้องกันการติดสินบนอย่างเข้มงวดและมีประสิทธิภาพ
+            ปรากฏผลลัพธ์ชัดเจน และไม่ปรากฏการร้องเรียนหรือ
+            การทุจริตหรือข้อสงสัยเกี่ยวกับการติดสินบน </p>
+
+        </td>
+        <td>
+          <p class="indent-2">รายงานผลการดำเนินการตามแผนพัฒนาการดำเนินงาน(Improvement Plan) ในการป้องกัน
+            การติดสินบนในโครงการก่อสร้างทางหลวงท้องถิ่น</p>
+        </td>
+      </tr>
+
+      <!-- เกณฑ์การให้คะแนน -->
+      <tr>
+        <td>
+          <h3>เกณฑ์การให้คะแนน</h3>
+          <p class="indent-8">พิจารณาจากความสาเร็จของการดาเนินมาตรการของ
+            องค์กรปกครองส่วนท้องถิ่น โดยทำการประเมินเป็นรายปี
+            และมีเกณฑ์ให้คะแนน ดังนี้</p>
+
+          <div class="grid grid-cols-1 gap-3 mt-2">
+            <m-radio displayValue="1" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1 ได้ 1 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="2" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-2 ได้ 2 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="3" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-3 ได้ 3 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="4" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-4 ได้ 4 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="5" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-5 ได้ 5 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+          </div>
+
+        </td>
+
+        <td></td>
+
+        <td>
+          <h3>เกณฑ์การให้คะแนน</h3>
+          <p class="indent-8">พิจารณาจากระดับความสำเร็จของการดำเนินการตามแผนพัฒนาการดำเนินงาน (Improvement Plan)</p>
+
+          <div class="grid grid-cols-1 gap-3 mt-2">
+
+            <m-radio displayValue="1" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']" displayText="ดำเนินการได้ตามข้อ 1 ได้ 1 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="2" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']" displayText="ดำเนินการได้ตามข้อ 1-2 ได้ 2 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="3" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']" displayText="ดำเนินการได้ตามข้อ 1-3 ได้ 3 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="4" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']" displayText="ดำเนินการได้ตามข้อ 1-4 ได้ 4 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="5" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']" displayText="ดำเนินการได้ตามข้อ 1-5 ได้ 5 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+          </div>
+
+        </td>
+
+        <td></td>
+      </tr>
+
+      <!-- ผลคะแนน -->
+      <tr>
+        <td colspan="2" class="text-center">
+          คะแนนความสามารถในการดำเนินการตามมาตรการที่ 12
+          <br> ได้....{{processData[measuresPrefix + '_Process_1']}}.....คะแนน
+        </td>
+        <td colspan="2" class="text-center">
+          คะแนนความสำเร็จตามตัวชี้วัดที่ 12
+          <br> ได้....{{acthievementData[measuresPrefix + '_Acthievement_1']}}.....คะแนน
+        </td>
+      </tr>
+
+    </tbody>
+
+  </table>
+</section>

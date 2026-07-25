@@ -1,0 +1,59 @@
+
+.persernal-info{
+  @apply  grid grid-cols-3 gap-2;
+  border: 2px solid var(--second-color);
+  padding: 1rem;
+  margin-top: -15px;
+  border-radius: 10px;
+}
+
+.report-info{
+  @apply  grid grid-cols-2 gap-2 mt-2;
+  border: 2px solid var(--second-color);
+  padding: 1rem;
+  margin-top: -15px;
+  border-radius: 10px;
+
+  .report-detail{
+    @apply col-span-2;
+  }
+}
+
+.header {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background-color: var(--second-color);
+  padding: 0.25rem 1rem;
+  border-radius: 40px;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+::ng-deep {
+  body.tablet{
+    .header {
+      font-size: 1rem;
+    }
+    .persernal-info{
+      @apply grid-cols-2
+    }
+  }
+
+  body.mobile{
+    .header {
+      font-size: 0.9rem;
+    }
+
+    .persernal-info{
+      @apply grid-cols-1
+    }
+
+    .report-info{
+      @apply grid-cols-1;
+      .report-detail{
+        grid-column: span 1 / span 1 !important;
+      }
+    }
+  }
+}

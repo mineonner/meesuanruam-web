@@ -1,0 +1,41 @@
+<div [ngClass]="{'backdrop' : isShowMenuSidebar}" (click)="toggleMenuSidebar()">
+
+</div>
+
+<nav class="menu-sidebar" [ngClass]="{'close-menu-sidebar' : !isShowMenuSidebar}">
+  <article class="sidebar-header">
+    <div></div>
+    <button (click)="toggleMenuSidebar()">
+      <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+        <path
+          d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm120-80v-560H200v560h120Zm80 0h360v-560H400v560Zm-80 0H200h120Z" />
+      </svg>
+    </button>
+  </article>
+
+  <article class="sidebar-content">
+    <ul class="menu-content" [ngClass]="{'menu-content-hide' : !isShowMenuSidebar}">
+
+      <li><a routerLink="/admin/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page" class="menu-link">
+          <div [ngClass]="{'active-indicator' : isShowMenuSidebar}"></div>
+          <fa-icon icon="home"></fa-icon><span class="menu-text">รายการร้องเรียน</span>
+        </a></li>
+      <li><a routerLink="/admin/report-management" routerLinkActive="active" ariaCurrentWhenActive="page"
+          class="menu-link">
+          <div [ngClass]="{'active-indicator' : isShowMenuSidebar}"></div>
+          <fa-icon icon="bullhorn"></fa-icon><span class="menu-text">รายการร้องเรียน</span>
+        </a></li>
+      <li><a routerLink="/admin/comment-management" routerLinkActive="active" ariaCurrentWhenActive="page"
+          class="menu-link">
+          <div [ngClass]="{'active-indicator' : isShowMenuSidebar}"></div>
+          <fa-icon icon="comments"></fa-icon><span class="menu-text">แสดงความคิดเห็น</span>
+        </a></li>
+
+      <li><a routerLink="/admin/guide-practice" routerLinkActive="active" ariaCurrentWhenActive="page"
+          class="menu-link">
+          <div [ngClass]="{'active-indicator' : isShowMenuSidebar}"></div>
+          <fa-icon icon="book"></fa-icon><span class="menu-text">คู่มือแนวทางสำหรับการปฏิบัติเพื่อเสริมสร้างความโปร่งใสในกระบวนการจัดซื้อจัดจ้าง</span>
+        </a></li>
+    </ul>
+  </article>
+</nav>

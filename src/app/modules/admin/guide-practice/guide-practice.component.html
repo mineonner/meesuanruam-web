@@ -1,0 +1,57 @@
+<article class="table-content">
+  <a routerLink="/admin/guide-practice-edit"><button class="export-button">เพิ่มโครงการ</button></a>
+  <div class="table-scroll">
+    <table matSort class="table-mee table-auto">
+      <thead>
+        <tr>
+          <th class="m-w-[50px] w-[50px] text-center">#</th>
+          <th class="m-w-[250px] w-[250px] text-center">ชื่อโครงการ</th>
+          <th class="m-w-[100px] w-[100px] text-center">สถานะโครงการ</th>
+          <th class="m-w-[100px] w-[100px] text-center">วันที่</th>
+          <th class="m-w-[100px] w-[100px] text-center"></th>
+        </tr>
+      </thead>
+
+      <tbody *ngIf="sortedData.length == 0 && !loader">
+        <tr>
+          <td colspan="5" class="text-center">ไม่มีข้อมูล</td>
+        </tr>
+      </tbody>
+
+      <tbody *ngIf="sortedData.length > 0 && !loader">
+        <ng-container *ngFor="let item of sortedData;">
+          <tr>
+            <td>
+              <div class="actions">
+                <a [routerLink]="['/admin/guide-practice-edit', item.code]"><button class="btn-edit"><fa-icon
+                      icon="pencil"></fa-icon></button></a>
+                <button class="btn-delete" (click)="deleteProject(item)"><fa-icon icon="trash"></fa-icon></button>
+              </div>
+            </td>
+
+            <td>
+              {{item.name}}
+            </td>
+
+            <td class="text-center">
+              {{item.status}}
+            </td>
+
+            <td class="text-center">
+              {{item.create_date | mDate}}
+            </td>
+
+            <td class="text-center">
+              <button class="export-button" (click)="exportProjectInfo(item)">export</button>
+            </td>
+          </tr>
+        </ng-container>
+
+      </tbody>
+    </table>
+
+    <article>
+      <m-pagination [items]="dataList" (changePage)="onChangePage($event)" [pageIndex]="pageIndex"></m-pagination>
+    </article>
+  </div>
+</article>

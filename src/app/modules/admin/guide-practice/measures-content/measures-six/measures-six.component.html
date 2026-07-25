@@ -1,0 +1,199 @@
+<section class="w-full">
+  <table class="table-mee measures-table table-auto">
+
+    <colgroup>
+      <col style="width: 200px;" />
+      <col style="width: 50px;" />
+      <col style="width: 200px;" />
+      <col style="width: 50px;" />
+    </colgroup>
+
+    <thead>
+      <tr>
+        <th class="text-center" colspan="2">ความสามารถในการดำเนินการตามมาตรการ</th>
+        <th class="text-center" colspan="2">ระดับความสำเร็จตามตัวชี้วัด</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- หัวข้อมมาตราการ -->
+      <tr class="sub-head">
+        <td>มาตรการที่ 6 องค์กรปกครองส่วนท้องถิ่นมีการเปิดเผย
+          ข้อมูลสัญญาการจัดซื้อจัดจ้างโครงการก่อสร้าง
+          ทางหลวงท้องถิ่นต่อสาธารณะเพื่อประชาพิจารณ์</td>
+        <td class="text-center">หลักฐานประกอบ</td>
+        <td>ตัวชี้วัดที่ 6 ร้อยละของจำนวนสัญญาโครงการฯ ที่มีการจัด
+          ให้มีประชาพิจารณ์เพื่อตรวจสอบความถูกต้องและพิจารณา
+          ถึงความสอดคล้องกับ TOR ซึ่งจะต้องมีการสรุปผลการ
+          ประชาพิจารณ์ และประกาศผลการประชาพิจารณ์ต่อ
+          สาธารณะอย่างเป็นทางการ</td>
+        <td class="text-center">หลักฐานประกอบ</td>
+      </tr>
+      <!-- คำอธิบาย -->
+      <tr>
+        <td>
+          <h3>คำอธิบายมาตรการ</h3>
+          <p class="indent-8">องค์กรปกครองส่วนท้องถิ่นต้องเปิดเผยข้อมูลที่
+            เกี่ยวข้องกับโครงการก่อสร้างทางหลวงท้องถิ่นบน
+            ช่องทางที่ประชาชนสามารถเข้าถึงได้ผ่านช่องทางที่
+            หลากหลายและประชาชนสามารถเข้าถึงข้อมูลเหล่านั้นได้
+            เช่น เว็บไซต์ขององค์กรปกครองส่วนท้องถิ่น ศูนย์ข้อมูล
+            ข่าวสารของหน่วยงานราชการ ป้ายประชาสัมพันธ์ในพื้นที่
+            ก่อสร้าง ดิจิทัลแพลตฟอร์ม หรือด้วยวิธีการอื ่น ๆ
+            โดยมีรายละเอียดของโครงการและเงื่อนไขของสัญญา
+            อย่างชัดเจน และมีการจัดให้มีการประชาพิจารณ์
+            ในรูปแบบใดรูปแบบหนึ่ง เกี่ยวกับสัญญาการจัดซื้อจัดจ้าง
+            โครงการดังกล่าว เพื่อรับฟังความคิดเห็นของประชาชน
+            โดยองค์กรปกครองส่วนท้องถิ่นจะต้องมีการสรุปผล
+            การประชาพิจารณ์ และประกาศผลการประชาพิจารณ์
+            ต่อสาธารณะอย่างเป็นทางการ และมีการประกาศผล
+            การประชาพิจารณ์ให้ประชาชนได้รับทราบโดยทั่วกัน
+            ก่อนที่จะเริ่มดำเนินการตามสัญญาจ้าง ทั้งนี้ องค์กร
+            ปกครองส่วนท้องถิ่นจะต้องมีการดำเนินการที่สำคัญ
+            ดังนี</p>
+
+
+          <div class="grid grid-cols-1 gap-3 mt-2">
+            <m-checkbox title="มีขั้นตอนที่เจ้าหน้าที่ขององค์กรปกครองส่วนท้องถิ่น
+            ตรวจสอบรายละเอียดของสัญญาก่อนเริ่มทำสัญญา เพื่อตรวจสอบความถูกต้องและความสอดคล้องกับ TOR"
+              [value]="measuresData[measuresPrefix + '_Check_1']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_1', $event)"></m-checkbox>
+
+            <m-checkbox title="จัดทำสัญญาการจัดซื้อจัดจ้างโครงการก่อสร้างทางหลวงท้องถิ่น"
+              [value]="measuresData[measuresPrefix + '_Check_2']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_2', $event)"></m-checkbox>
+
+            <m-checkbox title="นำข้อมูลสัญญาการจัดซื้อจัดจ้างโครงการ ดังกล่าว
+            เผยแพร่ต่อสาธารณะผ่านช่องทางการประชาสัมพันธ์ต่าง ๆ เช่น ป้ายประชาสัมพันธ์ของ
+            องค์กรปกครองส่วนท้องถิ่นหรือในพื้นที่ก่อสร้างดิจิทัลแพลตฟอร์ม หรือด้วยวิธีการอื่น ๆ"
+              [value]="measuresData[measuresPrefix + '_Check_3']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_3', $event)"></m-checkbox>
+
+            <m-checkbox
+              title="จัดให้มีการประชาพิจารณ์หรือรับฟังความคิดเห็นจากประชาชนในรูปแบบใดรูปแบบหนึ่งเกี่ยวกับสัญญาการจัดซื้อจัดจ้างโครงการดังกล่าว"
+              [value]="measuresData[measuresPrefix + '_Check_4']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_4', $event)"></m-checkbox>
+
+            <m-checkbox title="องค์กรปกครองส่วนท้องถิ่นจะต้องมีการสรุปผลการประชาพิจารณ์ และประกาศผลการ
+              ประชาพิจารณ์ต่อสาธารณะอย่างเป็นทางการ" [value]="measuresData[measuresPrefix + '_Check_5']"
+              (valueChange)="measuresCheckChange(measuresPrefix + '_Check_5', $event)"></m-checkbox>
+
+          </div>
+
+        </td>
+
+        <td>1.หลักฐานการเผยแพร่ข้อมูลสัญญาการจัดซื้อจัดจ้างโครงการก่อสร้างทางหลวงท้องถิ่นต่อสาธารณะ
+          <br>2.รายงานสรุปผลการประชาพิจารณ์ต่อสาธารณะอย่างเป็นทางการ
+        </td>
+        <td>
+          <h3>คำอธิบายตัวชี้วัด</h3>
+          <p class="indent-8">องค์กรปกครองส่วนท้องถิ่น จะต้องมีการดำเนินการตาม
+            มาตรการที่กำหนด ทั้งนี้ ความสำเร็จของการดำเนินการตาม
+            ตัวชี้วัดนี้ พิจารณาจากร้อยละของจำนวนสัญญาโครงการที่มี
+            การจัดให้มีประชาพิจารณ์เพื่อตรวจสอบความถูกต้องและ
+            พิจารณาถึงความสอดคล้องกับ TOR ซึ่งจะต้องมีการสรุปผล
+            การประชาพิจารณ์ และประกาศผลการประชาพิจารณ์ต่อ
+            สาธารณะอย่างเป็นทางการ โดยจะต้องมีการดำเนินการตาม
+            มาตรการที่กำหนดครบทั้ง 5 ขั้นตอน
+          </p>
+        </td>
+        <td>
+          <p class="indent-8">รายงานสรุปผลหรือการแสดงให้เห็นสัดส่วนของจำนวนสัญญาหรือโครงการฯ
+            ที่มีการจัดให้มีประชาพิจารณ์เพื่อตรวจสอบความถูกต้องและพิจารณาถึงความสอดคล้องกับ TOR</p>
+        </td>
+      </tr>
+
+      <!-- เกณฑ์การให้คะแนน -->
+      <tr>
+        <td>
+          <h3>เกณฑ์การให้คะแนน</h3>
+          <p class="indent-8">พิจารณาจากความสาเร็จของการดาเนินมาตรการของ
+            องค์กรปกครองส่วนท้องถิ่น โดยทำการประเมินเป็นรายปี
+            และมีเกณฑ์ให้คะแนน ดังนี้</p>
+
+          <div class="grid grid-cols-1 gap-3 mt-2">
+            <m-radio displayValue="1" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1 ได้ 1 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="2" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-2 ได้ 2 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="3" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-3 ได้ 3 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="4" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-4 ได้ 4 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+            <m-radio displayValue="5" [name]="measuresPrefix + '_Process_1'"
+              [value]="processData[measuresPrefix + '_Process_1']" displayText="ดำเนินการได้ตามข้อ 1-5 ได้ 5 คะแนน"
+              [disabled]="disableProcess"
+              (valueChange)="processChange(measuresPrefix + '_Process_1', $event)"></m-radio>
+
+          </div>
+
+        </td>
+
+        <td></td>
+
+        <td>
+          <h3>เกณฑ์การให้คะแนน</h3>
+          <p class="indent-8">พิจารณาจากร้อยละของจำนวนสัญญาโครงการฯ ที่มีการจัดให้มีประชาพิจารณ์ดังนี้</p>
+
+          <div class="grid grid-cols-1 gap-3 mt-2">
+            <m-radio displayValue="1" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีการดำเนินการร้อยละ 75-79.99 ได้ 1 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="2" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีการดำเนินการร้อยละ 80-84.99 ได้ 2 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="3" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีการดำเนินการร้อยละ 85-89.99 ได้ 3 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="4" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีการดำเนินการร้อยละ 90-94.99 ได้ 4 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+            <m-radio displayValue="5" [name]="measuresPrefix + '_Acthievement_1'"
+              [value]="acthievementData[measuresPrefix + '_Acthievement_1']"
+              displayText="มีการดำเนินการร้อยละ 95 ขึ้นไป ได้ 5 คะแนน" [disabled]="disableActhievement"
+              (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
+
+          </div>
+
+        </td>
+
+        <td></td>
+
+      </tr>
+
+      <!-- ผลคะแนน -->
+      <tr>
+        <td colspan="2" class="text-center">
+          คะแนนความสามารถในการดำเนินการตามมาตรการที่ 6
+          <br> ได้....{{processData[measuresPrefix + '_Process_1']}}.....คะแนน
+        </td>
+        <td colspan="2" class="text-center">
+          คะแนนความสำเร็จตามตัวชี้วัดที่ 6
+          <br> ได้....{{acthievementData[measuresPrefix + '_Acthievement_1']}}.....คะแนน
+        </td>
+      </tr>
+
+    </tbody>
+
+  </table>
+</section>

@@ -1,0 +1,266 @@
+.anonymous-content {
+  @apply grid grid-cols-2 gap-10 items-center mx-auto mt-4 justify-items-center;
+  max-width: 600px;
+
+  .anonymous-section {
+    background-color: var(--second-color);
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.5rem;
+    color: #ffffff;
+    border-radius: 30px;
+    // display: flex;
+    position: relative;
+
+    transition: all ease 0.5s;
+
+    .anonymous-input {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .anonymous-img {
+      height: 100px;
+      position: absolute;
+      left: -30px;
+      transition-property: transform;
+      transition-timing-function: ease;
+      transition-duration: 200ms;
+    }
+  }
+
+  .anonymous-section:hover {
+    box-shadow: 0 1px 30px -12px #ffffff;
+
+    .anonymous-img {
+      transform: scaleX(-1);
+    }
+  }
+
+  ::ng-deep {
+    m-radio-form {
+      .input-radio {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.persernal-content {
+  margin-top: 6rem;
+  border-radius: 10px;
+  border: 2px solid var(--second-color);
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+
+  .persernal-header {
+    transition: font-size ease 0.5s;
+    text-align: center;
+    font-size: 2rem;
+    color: #ffffff;
+    background-color: var(--second-color);
+    width: 90%;
+    margin-top: -50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 2rem;
+    border-radius: 40px;
+  }
+
+  .input-name-another {
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .persernal-info{
+    @apply  grid grid-cols-2 gap-5 justify-items-center;
+  }
+
+  m-input-form , m-numeric-form{
+    width: 60%;
+
+    ::ng-deep input {
+      border-radius: 20px;
+    }
+  }
+
+
+}
+
+.report-content {
+  margin-top: 2rem;
+
+  .header {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ffffff;
+    background-color: var(--second-color);
+    padding: 0.25rem 3rem;
+    border-radius: 40px;
+    display: inline-block;
+  }
+
+  ::ng-deep {
+    m-checkbox-form {
+      label {
+        max-width: 600px;
+        width: 100%;
+      }
+    }
+
+    .input-another {
+      margin-left: 1rem;
+      width: 100%;
+
+      .input-length {
+        position: absolute;
+        bottom: -1.25rem;
+        right: 0;
+      }
+    }
+  }
+
+
+}
+
+.file-content {
+  margin-top: 4rem;
+  border-radius: 10px;
+  border: 2px solid var(--second-color);
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+
+  .file-header {
+    text-align: center;
+    font-size: 2rem;
+    color: #ffffff;
+    background-color: var(--second-color);
+    width: 90%;
+    margin-top: -70px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 2rem;
+    border-radius: 40px;
+  }
+}
+
+.sent-report {
+  background-color: var(--second-color);
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-default);
+  transition: all ease 0.5s;
+
+  display: flex;
+  gap: 0.5rem;
+  align-content: center;
+}
+
+.sent-report:hover {
+  box-shadow: 5px -5px 2px gray;
+  transform: translateY(5px);
+}
+
+::ng-deep {
+  body.responsive {}
+
+  body.small-desktop {
+    .anonymous-content .anonymous-section {
+      // font-size: 1.25rem !important;
+    }
+  }
+
+  body.tablet {
+    .anonymous-content {
+      gap: 1.5rem;
+
+      .anonymous-section {
+        font-size: 1.25rem !important;
+        padding: 0.5rem !important;
+
+        .anonymous-img {
+          height: 80px !important;
+          left: -10px !important;
+        }
+      }
+    }
+
+    .persernal-content {
+      padding: 0.5rem 1rem;
+      .persernal-header {
+        font-size: 1.5rem !important;
+      }
+
+      m-input-form , m-numeric-form {
+        width: 100% !important;
+      }
+    }
+
+    .report-content .header{
+      font-size: 1.2rem !important;
+    }
+
+    .file-content .file-header{
+      font-size: 1.5rem !important;
+    }
+
+    .sent-report {
+      font-size: 1rem ;
+    }
+  }
+
+  body.mobile {
+    .anonymous-content {
+      gap: 1.5rem;
+
+      .anonymous-section {
+        font-size: 0.8rem !important;
+        padding: 0.25rem !important;
+
+        .anonymous-img {
+          height: 60px !important;
+          left: -10px !important;
+        }
+      }
+    }
+
+    .persernal-content {
+      margin-top: 3rem;
+      padding: 0.5rem 1rem;
+      .persernal-header {
+        font-size: 1rem !important;
+      }
+
+      .input-name-another {
+        width: 100% !important;
+      }
+
+      .persernal-info{
+        grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+      }
+
+      m-input-form, m-numeric-form {
+        width: 100% !important;
+      }
+    }
+
+    .report-content .header{
+      font-size: 0.85rem !important;
+    }
+
+    .file-content .file-header{
+      font-size: 1rem !important;
+    }
+
+    .sent-report {
+      font-size: 0.8rem ;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}

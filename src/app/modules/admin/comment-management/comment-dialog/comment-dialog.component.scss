@@ -1,0 +1,25 @@
+.header {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background-color: var(--second-color);
+  padding: 0.25rem 1rem;
+  border-radius: 40px;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.comment-info{
+  @apply  grid grid-cols-3 gap-2;
+  border: 2px solid var(--second-color);
+  padding: 1rem;
+  margin-top: -15px;
+  border-radius: 10px;
+}
+
+.map-info{
+  border: 2px solid var(--second-color);
+  padding: 1rem;
+  margin-top: -15px;
+  border-radius: 10px;
+}

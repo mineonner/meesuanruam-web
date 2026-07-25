@@ -1,0 +1,38 @@
+<article class="warp-login">
+  <section class="login-form">
+    <span class="login-title">Login to continue</span>
+    <m-input-form [title]="'Email'" [control]="f['user_email']"></m-input-form>
+    <m-input-form [title]="'Password'" [inputType]="'password'" [control]="f['password']"></m-input-form>
+
+    <p class="reset-button" (click)="showResetPassword()">reset password?</p>
+
+    <button class="login-button" (click)="login()"><m-spinner *ngIf="sentLoader"></m-spinner>LOGIN</button>
+  </section>
+
+  <section class="login-image">
+
+  </section>
+</article>
+
+<m-dialog [(isShowDialog)]="isShowDialog">
+  <ng-template #dialogHeader>
+    <p>Reset Password</p>
+  </ng-template>
+
+  <ng-template #dialogContent>
+    <section class="login-form">
+      <m-input-form [title]="'Email'" [control]="fRe['user_email']"></m-input-form>
+      <m-input-form [title]="'New Password'" [inputType]="'password'" [control]="fRe['password']"></m-input-form>
+      <m-input-form [title]="'New Password Confrim'" [inputType]="'password'" [control]="fRe['password_confrim']"></m-input-form>
+      <m-input-form [title]="'OTP'" [control]="fRe['user_otp']"></m-input-form>
+    </section>
+  </ng-template>
+
+  <ng-template #dialogAction>
+    <div class="flex justify-end gap-2">
+      <button class="btn" (click)="resetPassword()">ตกลง</button>
+      <button class="btn" (click)="getOTP()">ขอเลข OTP</button>
+    </div>
+
+  </ng-template>
+</m-dialog>

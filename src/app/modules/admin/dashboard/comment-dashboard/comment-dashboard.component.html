@@ -1,0 +1,7 @@
+<div class="chart-content" *ngIf="!!data">
+  <apx-chart [series]="commentTotalChartOptions.series" [chart]="commentTotalChartOptions.chart"
+  [dataLabels]="commentTotalChartOptions.dataLabels" [markers]="commentTotalChartOptions.markers"
+  [title]="commentTotalChartOptions.title" [fill]="commentTotalChartOptions.fill" [yaxis]="commentTotalChartOptions.yaxis"
+  [xaxis]="commentTotalChartOptions.xaxis" [tooltip]="commentTotalChartOptions.tooltip"
+  [autoUpdateSeries]="true"></apx-chart>
+</div>
