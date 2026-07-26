@@ -139,6 +139,15 @@
 
           </div>
 
+          <div class="mt-4 attach-evidence">
+            <h4>เอกสารหลักฐานประกอบ</h4>
+            <m-input-file [mode]="projectCode ? '' : 'view'"
+              [files]="filesOf(measuresPrefix + '_Process_1')"
+              (filesChange)="onFilesChange(measuresPrefix + '_Process_1', $event)"
+              (fileRemoved)="onFileRemoved(measuresPrefix + '_Process_1', $event)"></m-input-file>
+            <p *ngIf="!projectCode" class="text-sm mt-1">บันทึกโครงการก่อนจึงจะแนบไฟล์ได้</p>
+          </div>
+
         </td>
 
         <td></td>
@@ -173,6 +182,15 @@
               displayText="มีการดำเนินการร้อยละ 95 ขึ้นไป ได้ 5 คะแนน" [disabled]="disableActhievement"
               (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
 
+          </div>
+
+          <div class="mt-4 attach-evidence">
+            <h4>เอกสารหลักฐานประกอบ</h4>
+            <m-input-file [mode]="projectCode ? '' : 'view'"
+              [files]="filesOf(measuresPrefix + '_Acthievement_1')"
+              (filesChange)="onFilesChange(measuresPrefix + '_Acthievement_1', $event)"
+              (fileRemoved)="onFileRemoved(measuresPrefix + '_Acthievement_1', $event)"></m-input-file>
+            <p *ngIf="!projectCode" class="text-sm mt-1">บันทึกโครงการก่อนจึงจะแนบไฟล์ได้</p>
           </div>
 
         </td>
