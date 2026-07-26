@@ -159,15 +159,6 @@
 
           </div>
 
-          <div class="mt-4 attach-evidence">
-            <h4>เอกสารหลักฐานประกอบ</h4>
-            <m-input-file [mode]="projectCode ? '' : 'view'"
-              [files]="filesOf(measuresPrefix + '_Process_1')"
-              (filesChange)="onFilesChange(measuresPrefix + '_Process_1', $event)"
-              (fileRemoved)="onFileRemoved(measuresPrefix + '_Process_1', $event)"></m-input-file>
-            <p *ngIf="!projectCode" class="text-sm mt-1">บันทึกโครงการก่อนจึงจะแนบไฟล์ได้</p>
-          </div>
-
         </td>
 
         <td></td>
@@ -203,15 +194,6 @@
               (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_1', $event)"></m-radio>
 
           </div>
-
-          <div class="mt-4 attach-evidence">
-            <h4>เอกสารหลักฐานประกอบ</h4>
-            <m-input-file [mode]="projectCode ? '' : 'view'"
-              [files]="filesOf(measuresPrefix + '_Acthievement_1')"
-              (filesChange)="onFilesChange(measuresPrefix + '_Acthievement_1', $event)"
-              (fileRemoved)="onFileRemoved(measuresPrefix + '_Acthievement_1', $event)"></m-input-file>
-            <p *ngIf="!projectCode" class="text-sm mt-1">บันทึกโครงการก่อนจึงจะแนบไฟล์ได้</p>
-          </div>
         </td>
 
         <td></td>
@@ -229,6 +211,17 @@
           <br> ได้....{{acthievementData[measuresPrefix + '_Acthievement_1']}}.....คะแนน
         </td>
       </tr>
+      <!-- เอกสารหลักฐานประกอบของมาตรการนี้ -->
+      <tr>
+        <td colspan="4">
+          <h4>เอกสารหลักฐานประกอบ</h4>
+          <m-input-file [files]="filesOf(measuresPrefix + '_Process_1')"
+            (filesChange)="onFilesChange(measuresPrefix + '_Process_1', $event)"
+            (fileRemoved)="onFileRemoved(measuresPrefix + '_Process_1', $event)"></m-input-file>
+          <p *ngIf="!projectCode" class="text-sm mt-1">บันทึกโครงการก่อนจึงจะแนบไฟล์ได้</p>
+        </td>
+      </tr>
+
 
     </tbody>
 
