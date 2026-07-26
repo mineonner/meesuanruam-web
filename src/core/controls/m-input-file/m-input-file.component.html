@@ -69,11 +69,21 @@
           <td class="p-3 text-center">{{ index + 1 }}</td>
 
           <td class="p-3">
-            <fa-icon icon="image" *ngIf="checkFileType(file, imageTypeFile)"></fa-icon>
-            <fa-icon icon="file" *ngIf="checkFileType(file, documentTypeFile)"></fa-icon>
-            <fa-icon icon="file-video" *ngIf="checkFileType(file, videoTypeFile)"></fa-icon>
+            <!-- มี path แปลว่าไฟล์อยู่บนเซิร์ฟเวอร์แล้ว จึงกดโหลดได้
+                 ไฟล์ที่เพิ่งเลือกยังไม่มี path จนกว่าจะกดบันทึก -->
+            <a *ngIf="file.path" class="file-link" [href]="file.path" download>
+              <fa-icon icon="image" *ngIf="checkFileType(file, imageTypeFile)"></fa-icon>
+              <fa-icon icon="file" *ngIf="checkFileType(file, documentTypeFile)"></fa-icon>
+              <fa-icon icon="file-video" *ngIf="checkFileType(file, videoTypeFile)"></fa-icon>
+              <span class="ml-2">{{file.name }}</span>
+            </a>
 
-            <span class="ml-2">{{file.name }}</span>
+            <ng-container *ngIf="!file.path">
+              <fa-icon icon="image" *ngIf="checkFileType(file, imageTypeFile)"></fa-icon>
+              <fa-icon icon="file" *ngIf="checkFileType(file, documentTypeFile)"></fa-icon>
+              <fa-icon icon="file-video" *ngIf="checkFileType(file, videoTypeFile)"></fa-icon>
+              <span class="ml-2">{{file.name }}</span>
+            </ng-container>
           </td>
           <td class="p-3">{{ file.size | mFileSize }}</td>
         </tr>

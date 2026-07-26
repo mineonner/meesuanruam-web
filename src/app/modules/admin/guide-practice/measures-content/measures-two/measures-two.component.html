@@ -196,19 +196,6 @@
           <br> ได้....{{acthievementData[measuresPrefix + '_Acthievement_1']}}.....คะแนน
         </td>
       </tr>
-      <!-- เอกสารหลักฐานประกอบของมาตรการนี้ -->
-      <tr>
-        <td colspan="4">
-          <h4>เอกสารหลักฐานประกอบ</h4>
-          <m-input-file [files]="filesOf(measuresPrefix + '_Process_1')"
-            (filesChange)="onFilesChange(measuresPrefix + '_Process_1', $event)"
-            (fileRemoved)="onFileRemoved(measuresPrefix + '_Process_1', $event)"></m-input-file>
-        </td>
-      </tr>
-
-
-
-
     </tbody>
 
     <tbody>
@@ -253,24 +240,21 @@
 
           <div class="grid grid-cols-1 gap-3 mt-2">
             <m-radio displayValue="1" [name]="measuresPrefix + '_Acthievement_2'"
-              [value]="acthievementData[measuresPrefix + '_Acthievement_2']"
-              displayText="ในปีงบประมาณ องค์กรปกครองส่วนท้องถิ่นไม่มีการส่ง
+              [value]="acthievementData[measuresPrefix + '_Acthievement_2']" displayText="ในปีงบประมาณ องค์กรปกครองส่วนท้องถิ่นไม่มีการส่ง
               บุคลากรภายในหน่วยงานหรือภาคประชาชน เข้ารับ
               การอบรมในหลักสูตรที่เกี่ยวข้องกับการป้องกันและ
               ปราบปรามการทุจริตได้ 0 คะแนน" [disabled]="disableActhievement"
               (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_2', $event)"></m-radio>
 
             <m-radio displayValue="3" [name]="measuresPrefix + '_Acthievement_2'"
-              [value]="acthievementData[measuresPrefix + '_Acthievement_2']"
-              displayText="ในปีงบประมาณ องค์กรปกครองส่วนท้องถิ่นมีการส่ง
+              [value]="acthievementData[measuresPrefix + '_Acthievement_2']" displayText="ในปีงบประมาณ องค์กรปกครองส่วนท้องถิ่นมีการส่ง
                           บุคลากรภายในหน่วยงานหรือภาคประชาชน เข้ารับ
                           การอบรมในหลักสูตรที่เกี่ยวข้องกับการป้องกันและ
                           ปราบปรามการทุจริต จำนวน 1 ครั้ง ได้ 3 คะแนน" [disabled]="disableActhievement"
               (valueChange)="acthievementChange(measuresPrefix + '_Acthievement_2', $event)"></m-radio>
 
             <m-radio displayValue="5" [name]="measuresPrefix + '_Acthievement_2'"
-              [value]="acthievementData[measuresPrefix + '_Acthievement_2']"
-              displayText="ในปีงบประมาณ องค์กรปกครองส่วนท้องถิ่นมีการส่ง
+              [value]="acthievementData[measuresPrefix + '_Acthievement_2']" displayText="ในปีงบประมาณ องค์กรปกครองส่วนท้องถิ่นมีการส่ง
                       บุคลากรภายในหน่วยงานหรือภาคประชาชน เข้ารับ
                       การอบรมในหลักสูตรที่เกี่ยวข้องกับการป้องกันและ
                       ปราบปรามการทุจริตจำนวน 2 ครั้งหรือมากกว่า ได้ 5 คะแนน" [disabled]="disableActhievement"
@@ -284,12 +268,22 @@
 
       </tr>
 
-         <!-- ผลคะแนน -->
+      <!-- ผลคะแนน -->
       <tr>
         <td colspan="2" class="text-center"></td>
         <td colspan="2" class="text-center">
           คะแนนความสำเร็จตามตัวชี้วัดที่ *
           <br> ได้....{{acthievementData[measuresPrefix + '_Acthievement_2']}}.....คะแนน
+        </td>
+      </tr>
+
+      <!-- เอกสารหลักฐานประกอบของมาตรการนี้ -->
+      <tr>
+        <td colspan="4">
+          <h4>เอกสารหลักฐานประกอบ</h4>
+          <m-input-file [files]="filesOf(measuresPrefix + '_Process_1')"
+            (filesChange)="onFilesChange(measuresPrefix + '_Process_1', $event)"
+            (fileRemoved)="onFileRemoved(measuresPrefix + '_Process_1', $event)"></m-input-file>
         </td>
       </tr>
 
