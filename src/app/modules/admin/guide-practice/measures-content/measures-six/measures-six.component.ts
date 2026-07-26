@@ -1,7 +1,7 @@
 import { AdminService } from '../../../../../share/services/admin.service';
 import { AlertService } from '../../../../../../core/services/alert.service';
 import { FileAttachment } from '../../../../../../core/models/FileAttachment.mode';
-import { ProjectFileResModel } from '../../../../../share/model/respone/ProjectFileRes.model';
+import { ProjectFileQueueService } from '../../../../../share/services/project-file-queue.service';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProjectInfoResModel } from '../../../../../share/model/respone/ProjectInfoRes.model';
 
@@ -16,7 +16,7 @@ export class MeasuresSixComponent {
   @Output() dataChange: EventEmitter<ProjectInfoResModel> = new EventEmitter();
   measuresPrefix: string = 'Contact_Infomation'
 
-  constructor(private _admin: AdminService, private _alert: AlertService) { }
+  constructor(private _admin: AdminService, private _queue: ProjectFileQueueService) { }
   disableProcess: boolean = false;
   disableActhievement: boolean = false;
 
@@ -121,8 +121,6 @@ export class MeasuresSixComponent {
     this.dataChange.emit(this.data);
   }
 
-  // รหัสโครงการที่เข้ารหัสแล้ว ว่างแปลว่ายังไม่เคยบันทึก จึงยังแนบไฟล์ไม่ได้
-  @Input() projectCode: string | null = null;
 
   // แยกไฟล์เป็นถังตามคีย์ตัวชี้วัด เพื่อให้ m-input-file ผูกกับ array ได้ตรงๆ
   fileBuckets: { [key: string]: FileAttachment[] } = {};
@@ -144,34 +142,18 @@ export class MeasuresSixComponent {
     });
   }
 
-  async onFilesChange(key: string, files: FileAttachment[]) {
-    const pending = files.filter(f => f.file);
-    if (pending.length == 0) return;
-
-    if (!this.projectCode) {
-      this._alert.alert('error', 'แนบไฟล์ไม่ได้', 'กรุณาบันทึกโครงการก่อน');
-      pending.forEach(f => files.splice(files.indexOf(f), 1));
-      return;
-    }
-
-    const res = await this._admin.uploadProjectFiles(this.projectCode, key, pending);
-    if (res.status == 'success') {
-      // endpoint คืนแถวที่สร้างมาให้ จึงได้ id ไว้สั่งลบทันทีโดยไม่ต้องโหลดหน้าใหม่
-      (res.result ?? []).forEach((r: ProjectFileResModel) => {
-        this.fileIds[key] = this.fileIds[key] ?? {};
-        this.fileIds[key][r.name ?? ''] = r.id;
-        const local = files.find(f => f.name == r.name);
-        if (local) { local.file = null; local.path = r.path; }
-      });
-    } else {
-      this._alert.alert('error', 'แนบไฟล์ไม่สำเร็จ', res.message ?? '');
-      pending.forEach(f => { const i = files.indexOf(f); if (i > -1) files.splice(i, 1); });
-    }
+  // ไม่อัปทันที แต่พักไว้ให้หน้าแม่ส่งตอนกดบันทึก แบบเดียวกับหน้าแสดงความคิดเห็น
+  onFilesChange(key: string, files: FileAttachment[]) {
+    this._queue.set(key, files);
   }
 
   async onFileRemoved(key: string, file: FileAttachment) {
+    this._queue.set(key, this.filesOf(key));
+
+    // ไฟล์ที่ยังไม่เคยอัปไม่มี id ลบออกจากหน้าจอก็พอ
     const id = this.fileIds[key]?.[file.name ?? ''];
     if (!id) return;
+
     await this._admin.deleteProjectFile(id);
     delete this.fileIds[key][file.name ?? ''];
   }

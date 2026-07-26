@@ -191,7 +191,6 @@
           <m-input-file [files]="filesOf(measuresPrefix + '_Process_1')"
             (filesChange)="onFilesChange(measuresPrefix + '_Process_1', $event)"
             (fileRemoved)="onFileRemoved(measuresPrefix + '_Process_1', $event)"></m-input-file>
-          <p *ngIf="!projectCode" class="text-sm mt-1">บันทึกโครงการก่อนจึงจะแนบไฟล์ได้</p>
         </td>
       </tr>
 

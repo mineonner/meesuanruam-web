@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BaseOptionDropdownModel } from '../../../../../core/models/BaseOptionDropdown.model';
 import { AlertService } from '../../../../../core/services/alert.service';
 import { DataResponse } from '../../../../share/model/DataRespone.model';
+import { ProjectFileQueueService } from '../../../../share/services/project-file-queue.service';
 
 @Component({
   selector: 'guide-practice-edit',
@@ -32,6 +33,7 @@ export class GuidePracticeEditComponent {
     private _service: AdminService,
     private fb: FormBuilder,
     private _alert: AlertService,
+    private _queue: ProjectFileQueueService,
     private router: Router
   ) {
     this.form = this.fb.group({
@@ -41,6 +43,7 @@ export class GuidePracticeEditComponent {
   }
 
   ngOnInit() {
+    this._queue.reset();
     this.projectCode = this.route.snapshot.paramMap.get('code');
     this.getProjectInfo();
   }
@@ -65,6 +68,15 @@ export class GuidePracticeEditComponent {
         this.data = { ...this.data, ...this.form.getRawValue() };
         let res: DataResponse<any> = await this._service.saveProjectInfo(this.data);
         if (res.status == 'success') {
+          // ต้องบันทึกก่อนถึงจะมีรหัสโครงการให้อ้างถึง แบบเดียวกับหน้าแสดงความคิดเห็น
+          // saveProjectInfo คืนรหัสมาให้แล้ว จึงอัปไฟล์ที่พักไว้ต่อได้เลย
+          let failed = await this.uploadPendingFiles(res.result ?? this.projectCode);
+          if (failed.length > 0) {
+            this._alert.showAlertArr('error', 'บันทึกข้อมูลแล้ว แต่แนบไฟล์ไม่สำเร็จ', failed);
+            this.isLoaderSave = false;
+            return;
+          }
+
           this._alert.alert('success', '', res.message);
           this.router.navigate(['/admin/guide-practice']);
         }
@@ -74,6 +86,25 @@ export class GuidePracticeEditComponent {
     }
 
     this.isLoaderSave = false
+  }
+
+  /** ส่งไฟล์ที่พักไว้ทีละตัวชี้วัด คืนรายการข้อความผิดพลาดที่เกิดขึ้น */
+  async uploadPendingFiles(code: string): Promise<string[]> {
+    let errMsgs: string[] = [];
+
+    for (const item of this._queue.pending()) {
+      try {
+        let res: DataResponse<any> = await this._service.uploadProjectFiles(code, item.measuresPrefix, item.files);
+        if (res.status != 'success') {
+          errMsgs.push(res.message ?? `แนบไฟล์ของ ${item.measuresPrefix} ไม่สำเร็จ`);
+        }
+      } catch (ex) {
+        errMsgs.push(`แนบไฟล์ของ ${item.measuresPrefix} ไม่สำเร็จ`);
+      }
+    }
+
+    this._queue.reset();
+    return errMsgs;
   }
 
   validate() {
