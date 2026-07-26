@@ -1,3 +1,4 @@
+import { FileAttachment } from '../../../core/models/FileAttachment.mode';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { catchError, firstValueFrom, map, throwError } from "rxjs";
@@ -103,6 +104,23 @@ export class AdminService {
     });
   }
 
+
+  /** อัปไฟล์แนบเข้าตัวชี้วัดหนึ่งข้อของโครงการ ต้องบันทึกโครงการแล้วจึงมี code */
+  uploadProjectFiles(code: string, measuresPrefix: string, files: FileAttachment[]) {
+    const headers = { 'Authorization': `Bearer ${this._auth.accessToken}` }
+    const form = new FormData();
+    form.append('code', code);
+    form.append('measuresPrefix', measuresPrefix);
+    files.forEach(f => { if (f.file) form.append('formFiles', f.file, f.file.name); });
+
+    return firstValueFrom(this._http.post<DataResponse<any>>(`${environment.apis.server}/api/v1/Upload/saveProjectFiles`, form, { headers }).pipe(map(o => o)));
+  }
+
+  deleteProjectFile(id: number) {
+    const headers = { 'Authorization': `Bearer ${this._auth.accessToken}` }
+    const params = new HttpParams().set('id', id);
+    return firstValueFrom(this._http.post<DataResponse<any>>(`${environment.apis.server}/api/v1/Upload/deleteProjectFile`, null, { headers, params }).pipe(map(o => o)));
+  }
 
   handleError(error: HttpErrorResponse) {
     console.log(error);

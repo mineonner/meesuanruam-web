@@ -1,6 +1,7 @@
 import { IndicatorsActhievementResModel } from "./IndicatorsActhievementRes.model";
 import { MeasuresResModel } from "./MeasuresRes.model";
 import { ProcessResModel } from "./ProcessRes.model";
+import { ProjectFileResModel } from "./ProjectFileRes.model";
 
 export interface ProjectInfoResModel {
   code: string;
@@ -11,4 +12,5 @@ export interface ProjectInfoResModel {
   measures: MeasuresResModel[];
   process: ProcessResModel[];
   indicators_acthievement: IndicatorsActhievementResModel[];
+  files: ProjectFileResModel[];
 }

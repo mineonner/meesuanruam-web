@@ -13,6 +13,7 @@ export class MInputFileComponent {
   @Input() mode: string;
   @Input() files: FileAttachment[] = [];
   @Output() filesChange: EventEmitter<any> = new EventEmitter<any>();
+  @Output() fileRemoved: EventEmitter<FileAttachment> = new EventEmitter<FileAttachment>();
 
   imageTypeFile:string[] = ['png', 'jpg', 'jpeg'];
   documentTypeFile:string[] = ['pdf'];
@@ -54,6 +55,9 @@ export class MInputFileComponent {
 
   removeFile(file: FileAttachment, index: number) {
       this.files.splice(index, 1)
+      // ของเดิมไม่ emit ทำให้พ่อแม่ไม่รู้ว่ามีการลบ จึงลบฝั่งเซิร์ฟเวอร์ตามไม่ได้
+      this.fileRemoved.emit(file);
+      this.filesChange.emit(this.files);
   }
 
   validateFiles(uploadingFile: FileAttachment, files: FileAttachment[]) {
